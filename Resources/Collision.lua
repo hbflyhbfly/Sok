@@ -18,6 +18,8 @@ local COLLISION_TYPE_TABLE = {
 }
 local COLLISION_TYPE = newConst(COLLISION_TYPE_TABLE)
 
+local COLLISION_Z_ORDER_BARPIE = 1
+
 function Collision:createCollisionLayer()
 	local _layer = CCLayer:create()
 	local lenth = CONST.INTERVAL_COLLISION+CONST.WIDTH_COLLISION
@@ -28,7 +30,7 @@ function Collision:createCollisionLayer()
 			local collision = CCSprite:createWithSpriteFrame(cache:spriteFrameByName("down_bar.png"))
     		collision:setPosition(ccp(visibleSize.width+lenth*i,200))
     		_m_barPies:addObject(collision)
-    		_layer:addChild(collision)
+    		_layer:addChild(collision,COLLISION_Z_ORDER_BARPIE,COLLISION_TYPE.COLLISION_BARPIE)
     	end
     	_m_barPies:retain()
 
@@ -61,5 +63,18 @@ function Collision:createCollisionLayer()
     _layer:initContent()
     return _layer
 end
+function Collision:createCollision( type,loc )
+    -- body
+    local collision = {}
+    collision.type = type
+    collision.id = ""
+    collision.loc = loc
+    collision.name = ""
+    collision.sprite = ""
+
+    return collision
+end
+
+
 
 return Collision

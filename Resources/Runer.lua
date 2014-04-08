@@ -125,6 +125,10 @@ function Runer:createRunerLayer()
 			self:runerCrouchLogic()
 		end
 	end
+	function _layer:checkCollision( collision )
+		-- body
+		--print("zhoufei")
+	end
 	return _layer
 end
 

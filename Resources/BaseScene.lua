@@ -23,6 +23,7 @@ function createBaseLayer()
     local base_layer = CCLayer:create()
 
     local runer = {}
+    local collision = {}
     --local bg = CCSprite:create("texture/game_bg.png")
     --bg:setPosition(origin.x + visible_size.width / 2, origin.y + visible_size.height / 2)
     --base_layer:addChild(bg)
@@ -66,8 +67,18 @@ function createBaseLayer()
 
     function update(dt)
         runer:updateRuner(dt)
+        check()
     end
 
+    function check()
+        local collisions = collision:getCollisions()
+        if collisions then
+            for i=0,collisions:count()-1 do
+                runer:checkCollision(collisions:objectAtIndex(i))
+            end
+        end
+        -- body
+    end
     base_layer:registerScriptTouchHandler(onTouch)
     base_layer:setTouchEnabled(true)
     scheduler:scheduleScriptFunc(update, 0, false)
@@ -75,7 +86,8 @@ function createBaseLayer()
     base_layer:addChild(Background:createBackgroundLayer())
     runer = Runer:createRunerLayer()
     base_layer:addChild(runer)
-    base_layer:addChild(Collision:createCollisionLayer())
+    collision = Collision:createCollisionLayer()
+    base_layer:addChild(collision)
     base_layer:addChild(Weather:createWeatherLayer())
     return base_layer
 end
