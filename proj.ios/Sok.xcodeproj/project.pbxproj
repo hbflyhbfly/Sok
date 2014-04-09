@@ -208,31 +208,25 @@
 		46C1009316BF786A00F74D54 /* tolua_fix.c in Sources */ = {isa = PBXBuildFile; fileRef = 46C1008A16BF786A00F74D54 /* tolua_fix.c */; };
 		46C59AD317641FF300F43DC3 /* AudioEngine.lua in Resources */ = {isa = PBXBuildFile; fileRef = 46C59AD117641FF300F43DC3 /* AudioEngine.lua */; };
 		46C59AD417641FF300F43DC3 /* CCBReaderLoad.lua in Resources */ = {isa = PBXBuildFile; fileRef = 46C59AD217641FF300F43DC3 /* CCBReaderLoad.lua */; };
-		CD274FBD18F3A4E400FBCEAD /* app.icf in Resources */ = {isa = PBXBuildFile; fileRef = CD274F9F18F3A4E300FBCEAD /* app.icf */; };
-		CD274FBE18F3A4E400FBCEAD /* Background.lua in Resources */ = {isa = PBXBuildFile; fileRef = CD274FA018F3A4E300FBCEAD /* Background.lua */; };
-		CD274FC218F3A4E400FBCEAD /* Collision.lua in Resources */ = {isa = PBXBuildFile; fileRef = CD274FA418F3A4E300FBCEAD /* Collision.lua */; };
-		CD274FC418F3A4E400FBCEAD /* Marker Felt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD274FA718F3A4E300FBCEAD /* Marker Felt.ttf */; };
-		CD274FC618F3A4E400FBCEAD /* header.lua in Resources */ = {isa = PBXBuildFile; fileRef = CD274FA918F3A4E300FBCEAD /* header.lua */; };
-		CD274FD718F3A4E400FBCEAD /* Runer.lua in Resources */ = {isa = PBXBuildFile; fileRef = CD274FBB18F3A4E400FBCEAD /* Runer.lua */; };
-		CD274FD818F3A4E400FBCEAD /* Weather.lua in Resources */ = {isa = PBXBuildFile; fileRef = CD274FBC18F3A4E400FBCEAD /* Weather.lua */; };
-		CD63740818F4038400A5D8F2 /* ccbParticleSnow.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6373FD18F4038400A5D8F2 /* ccbParticleSnow.png */; };
-		CD63740918F4038400A5D8F2 /* game_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6373FE18F4038400A5D8F2 /* game_bg.png */; };
-		CD63740A18F4038400A5D8F2 /* move_mg_1.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6373FF18F4038400A5D8F2 /* move_mg_1.png */; };
-		CD63740B18F4038400A5D8F2 /* move_mg_2.png in Resources */ = {isa = PBXBuildFile; fileRef = CD63740018F4038400A5D8F2 /* move_mg_2.png */; };
-		CD63740C18F4038400A5D8F2 /* move_mg_3.png in Resources */ = {isa = PBXBuildFile; fileRef = CD63740118F4038400A5D8F2 /* move_mg_3.png */; };
-		CD63740D18F4038400A5D8F2 /* move_mg_4.png in Resources */ = {isa = PBXBuildFile; fileRef = CD63740218F4038400A5D8F2 /* move_mg_4.png */; };
-		CD63740E18F4038400A5D8F2 /* Res.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD63740318F4038400A5D8F2 /* Res.plist */; };
-		CD63740F18F4038400A5D8F2 /* Res.png in Resources */ = {isa = PBXBuildFile; fileRef = CD63740418F4038400A5D8F2 /* Res.png */; };
-		CD63741918F4038F00A5D8F2 /* jujian_a.ExportJson in Resources */ = {isa = PBXBuildFile; fileRef = CD63741418F4038F00A5D8F2 /* jujian_a.ExportJson */; };
-		CD63741A18F4038F00A5D8F2 /* jujian_a0.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD63741518F4038F00A5D8F2 /* jujian_a0.plist */; };
-		CD63741B18F4038F00A5D8F2 /* jujian_a0.png in Resources */ = {isa = PBXBuildFile; fileRef = CD63741618F4038F00A5D8F2 /* jujian_a0.png */; };
-		CD63741C18F4038F00A5D8F2 /* jujian_a1.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD63741718F4038F00A5D8F2 /* jujian_a1.plist */; };
-		CD63741D18F4038F00A5D8F2 /* jujian_a1.png in Resources */ = {isa = PBXBuildFile; fileRef = CD63741818F4038F00A5D8F2 /* jujian_a1.png */; };
-		CD63742018F403A800A5D8F2 /* armTest.lua in Resources */ = {isa = PBXBuildFile; fileRef = CD63741E18F403A800A5D8F2 /* armTest.lua */; };
-		CD63742118F403A800A5D8F2 /* BaseScene.lua in Resources */ = {isa = PBXBuildFile; fileRef = CD63741F18F403A800A5D8F2 /* BaseScene.lua */; };
-		CD63742518F403BF00A5D8F2 /* global.lua in Resources */ = {isa = PBXBuildFile; fileRef = CD63742218F403BF00A5D8F2 /* global.lua */; };
-		CD63742618F403BF00A5D8F2 /* main.lua in Resources */ = {isa = PBXBuildFile; fileRef = CD63742318F403BF00A5D8F2 /* main.lua */; };
-		CD63742718F403BF00A5D8F2 /* sklog.lua in Resources */ = {isa = PBXBuildFile; fileRef = CD63742418F403BF00A5D8F2 /* sklog.lua */; };
+		CDBEB33918F4EDA500AA3C98 /* app.icf in Resources */ = {isa = PBXBuildFile; fileRef = CDBEB32918F4EDA500AA3C98 /* app.icf */; };
+		CDBEB33A18F4EDA500AA3C98 /* arm in Resources */ = {isa = PBXBuildFile; fileRef = CDBEB32A18F4EDA500AA3C98 /* arm */; };
+		CDBEB33B18F4EDA500AA3C98 /* armTest.lua in Resources */ = {isa = PBXBuildFile; fileRef = CDBEB32B18F4EDA500AA3C98 /* armTest.lua */; };
+		CDBEB33C18F4EDA500AA3C98 /* Background.lua in Resources */ = {isa = PBXBuildFile; fileRef = CDBEB32C18F4EDA500AA3C98 /* Background.lua */; };
+		CDBEB33D18F4EDA500AA3C98 /* BaseScene.lua in Resources */ = {isa = PBXBuildFile; fileRef = CDBEB32D18F4EDA500AA3C98 /* BaseScene.lua */; };
+		CDBEB33E18F4EDA500AA3C98 /* Collision.lua in Resources */ = {isa = PBXBuildFile; fileRef = CDBEB32E18F4EDA500AA3C98 /* Collision.lua */; };
+		CDBEB33F18F4EDA500AA3C98 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = CDBEB32F18F4EDA500AA3C98 /* fonts */; };
+		CDBEB34018F4EDA500AA3C98 /* global.lua in Resources */ = {isa = PBXBuildFile; fileRef = CDBEB33018F4EDA500AA3C98 /* global.lua */; };
+		CDBEB34118F4EDA500AA3C98 /* header.lua in Resources */ = {isa = PBXBuildFile; fileRef = CDBEB33118F4EDA500AA3C98 /* header.lua */; };
+		CDBEB34218F4EDA500AA3C98 /* log.lua in Resources */ = {isa = PBXBuildFile; fileRef = CDBEB33218F4EDA500AA3C98 /* log.lua */; };
+		CDBEB34318F4EDA500AA3C98 /* logger.lua in Resources */ = {isa = PBXBuildFile; fileRef = CDBEB33318F4EDA500AA3C98 /* logger.lua */; };
+		CDBEB34418F4EDA500AA3C98 /* main.lua in Resources */ = {isa = PBXBuildFile; fileRef = CDBEB33418F4EDA500AA3C98 /* main.lua */; };
+		CDBEB34518F4EDA500AA3C98 /* Runer.lua in Resources */ = {isa = PBXBuildFile; fileRef = CDBEB33518F4EDA500AA3C98 /* Runer.lua */; };
+		CDBEB34618F4EDA500AA3C98 /* sklog.lua in Resources */ = {isa = PBXBuildFile; fileRef = CDBEB33618F4EDA500AA3C98 /* sklog.lua */; };
+		CDBEB34718F4EDA500AA3C98 /* texture in Resources */ = {isa = PBXBuildFile; fileRef = CDBEB33718F4EDA500AA3C98 /* texture */; };
+		CDBEB34818F4EDA500AA3C98 /* Weather.lua in Resources */ = {isa = PBXBuildFile; fileRef = CDBEB33818F4EDA500AA3C98 /* Weather.lua */; };
+		CDBEB34B18F4FD0200AA3C98 /* json.lua in Resources */ = {isa = PBXBuildFile; fileRef = CDBEB34A18F4FD0200AA3C98 /* json.lua */; };
+		CDBEB35018F5004200AA3C98 /* CollisionMap.lua in Resources */ = {isa = PBXBuildFile; fileRef = CDBEB34F18F5004200AA3C98 /* CollisionMap.lua */; };
+		CDCADCCB18F5287D000F137C /* tiled.json in Resources */ = {isa = PBXBuildFile; fileRef = CDCADCCA18F5287D000F137C /* tiled.json */; };
 		ED35C0C718323498002A0750 /* CCArmatureAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED35C03818323497002A0750 /* CCArmatureAnimation.cpp */; };
 		ED35C0C818323498002A0750 /* CCProcessBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED35C03A18323497002A0750 /* CCProcessBase.cpp */; };
 		ED35C0C918323498002A0750 /* CCTween.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED35C03C18323497002A0750 /* CCTween.cpp */; };
@@ -731,31 +725,25 @@
 		46C1008B16BF786A00F74D54 /* tolua_fix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tolua_fix.h; sourceTree = "<group>"; };
 		46C59AD117641FF300F43DC3 /* AudioEngine.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AudioEngine.lua; sourceTree = "<group>"; };
 		46C59AD217641FF300F43DC3 /* CCBReaderLoad.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CCBReaderLoad.lua; sourceTree = "<group>"; };
-		CD274F9F18F3A4E300FBCEAD /* app.icf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = app.icf; sourceTree = "<group>"; };
-		CD274FA018F3A4E300FBCEAD /* Background.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Background.lua; sourceTree = "<group>"; };
-		CD274FA418F3A4E300FBCEAD /* Collision.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Collision.lua; sourceTree = "<group>"; };
-		CD274FA718F3A4E300FBCEAD /* Marker Felt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marker Felt.ttf"; sourceTree = "<group>"; };
-		CD274FA918F3A4E300FBCEAD /* header.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = header.lua; sourceTree = "<group>"; };
-		CD274FBB18F3A4E400FBCEAD /* Runer.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Runer.lua; sourceTree = "<group>"; };
-		CD274FBC18F3A4E400FBCEAD /* Weather.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Weather.lua; sourceTree = "<group>"; };
-		CD6373FD18F4038400A5D8F2 /* ccbParticleSnow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ccbParticleSnow.png; sourceTree = "<group>"; };
-		CD6373FE18F4038400A5D8F2 /* game_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game_bg.png; sourceTree = "<group>"; };
-		CD6373FF18F4038400A5D8F2 /* move_mg_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = move_mg_1.png; sourceTree = "<group>"; };
-		CD63740018F4038400A5D8F2 /* move_mg_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = move_mg_2.png; sourceTree = "<group>"; };
-		CD63740118F4038400A5D8F2 /* move_mg_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = move_mg_3.png; sourceTree = "<group>"; };
-		CD63740218F4038400A5D8F2 /* move_mg_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = move_mg_4.png; sourceTree = "<group>"; };
-		CD63740318F4038400A5D8F2 /* Res.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Res.plist; sourceTree = "<group>"; };
-		CD63740418F4038400A5D8F2 /* Res.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Res.png; sourceTree = "<group>"; };
-		CD63741418F4038F00A5D8F2 /* jujian_a.ExportJson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jujian_a.ExportJson; sourceTree = "<group>"; };
-		CD63741518F4038F00A5D8F2 /* jujian_a0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = jujian_a0.plist; sourceTree = "<group>"; };
-		CD63741618F4038F00A5D8F2 /* jujian_a0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jujian_a0.png; sourceTree = "<group>"; };
-		CD63741718F4038F00A5D8F2 /* jujian_a1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = jujian_a1.plist; sourceTree = "<group>"; };
-		CD63741818F4038F00A5D8F2 /* jujian_a1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jujian_a1.png; sourceTree = "<group>"; };
-		CD63741E18F403A800A5D8F2 /* armTest.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = armTest.lua; sourceTree = "<group>"; };
-		CD63741F18F403A800A5D8F2 /* BaseScene.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BaseScene.lua; sourceTree = "<group>"; };
-		CD63742218F403BF00A5D8F2 /* global.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = global.lua; sourceTree = "<group>"; };
-		CD63742318F403BF00A5D8F2 /* main.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.lua; sourceTree = "<group>"; };
-		CD63742418F403BF00A5D8F2 /* sklog.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sklog.lua; sourceTree = "<group>"; };
+		CDBEB32918F4EDA500AA3C98 /* app.icf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = app.icf; sourceTree = "<group>"; };
+		CDBEB32A18F4EDA500AA3C98 /* arm */ = {isa = PBXFileReference; lastKnownFileType = folder; path = arm; sourceTree = "<group>"; };
+		CDBEB32B18F4EDA500AA3C98 /* armTest.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = armTest.lua; sourceTree = "<group>"; };
+		CDBEB32C18F4EDA500AA3C98 /* Background.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Background.lua; sourceTree = "<group>"; };
+		CDBEB32D18F4EDA500AA3C98 /* BaseScene.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BaseScene.lua; sourceTree = "<group>"; };
+		CDBEB32E18F4EDA500AA3C98 /* Collision.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Collision.lua; sourceTree = "<group>"; };
+		CDBEB32F18F4EDA500AA3C98 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
+		CDBEB33018F4EDA500AA3C98 /* global.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = global.lua; sourceTree = "<group>"; };
+		CDBEB33118F4EDA500AA3C98 /* header.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = header.lua; sourceTree = "<group>"; };
+		CDBEB33218F4EDA500AA3C98 /* log.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = log.lua; sourceTree = "<group>"; };
+		CDBEB33318F4EDA500AA3C98 /* logger.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = logger.lua; sourceTree = "<group>"; };
+		CDBEB33418F4EDA500AA3C98 /* main.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.lua; sourceTree = "<group>"; };
+		CDBEB33518F4EDA500AA3C98 /* Runer.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Runer.lua; sourceTree = "<group>"; };
+		CDBEB33618F4EDA500AA3C98 /* sklog.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sklog.lua; sourceTree = "<group>"; };
+		CDBEB33718F4EDA500AA3C98 /* texture */ = {isa = PBXFileReference; lastKnownFileType = folder; path = texture; sourceTree = "<group>"; };
+		CDBEB33818F4EDA500AA3C98 /* Weather.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Weather.lua; sourceTree = "<group>"; };
+		CDBEB34A18F4FD0200AA3C98 /* json.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = json.lua; sourceTree = "<group>"; };
+		CDBEB34F18F5004200AA3C98 /* CollisionMap.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CollisionMap.lua; sourceTree = "<group>"; };
+		CDCADCCA18F5287D000F137C /* tiled.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tiled.json; sourceTree = "<group>"; };
 		ED35C03818323497002A0750 /* CCArmatureAnimation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCArmatureAnimation.cpp; sourceTree = "<group>"; };
 		ED35C03918323497002A0750 /* CCArmatureAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCArmatureAnimation.h; sourceTree = "<group>"; };
 		ED35C03A18323497002A0750 /* CCProcessBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCProcessBase.cpp; sourceTree = "<group>"; };
@@ -1777,39 +1765,12 @@
 			path = script;
 			sourceTree = "<group>";
 		};
-		CD274FA618F3A4E300FBCEAD /* fonts */ = {
+		CDCADCC918F5287D000F137C /* data */ = {
 			isa = PBXGroup;
 			children = (
-				CD274FA718F3A4E300FBCEAD /* Marker Felt.ttf */,
+				CDCADCCA18F5287D000F137C /* tiled.json */,
 			);
-			path = fonts;
-			sourceTree = "<group>";
-		};
-		CD6373FC18F4038400A5D8F2 /* texture */ = {
-			isa = PBXGroup;
-			children = (
-				CD6373FD18F4038400A5D8F2 /* ccbParticleSnow.png */,
-				CD6373FE18F4038400A5D8F2 /* game_bg.png */,
-				CD6373FF18F4038400A5D8F2 /* move_mg_1.png */,
-				CD63740018F4038400A5D8F2 /* move_mg_2.png */,
-				CD63740118F4038400A5D8F2 /* move_mg_3.png */,
-				CD63740218F4038400A5D8F2 /* move_mg_4.png */,
-				CD63740318F4038400A5D8F2 /* Res.plist */,
-				CD63740418F4038400A5D8F2 /* Res.png */,
-			);
-			path = texture;
-			sourceTree = "<group>";
-		};
-		CD63741318F4038F00A5D8F2 /* arm */ = {
-			isa = PBXGroup;
-			children = (
-				CD63741418F4038F00A5D8F2 /* jujian_a.ExportJson */,
-				CD63741518F4038F00A5D8F2 /* jujian_a0.plist */,
-				CD63741618F4038F00A5D8F2 /* jujian_a0.png */,
-				CD63741718F4038F00A5D8F2 /* jujian_a1.plist */,
-				CD63741818F4038F00A5D8F2 /* jujian_a1.png */,
-			);
-			path = arm;
+			path = data;
 			sourceTree = "<group>";
 		};
 		ED35C02A18323496002A0750 /* CocoStudio */ = {
@@ -2102,20 +2063,25 @@
 		F293BC4615EB859D00256477 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CD63742218F403BF00A5D8F2 /* global.lua */,
-				CD63742318F403BF00A5D8F2 /* main.lua */,
-				CD63742418F403BF00A5D8F2 /* sklog.lua */,
-				CD63741E18F403A800A5D8F2 /* armTest.lua */,
-				CD63741F18F403A800A5D8F2 /* BaseScene.lua */,
-				CD63741318F4038F00A5D8F2 /* arm */,
-				CD6373FC18F4038400A5D8F2 /* texture */,
-				CD274F9F18F3A4E300FBCEAD /* app.icf */,
-				CD274FA618F3A4E300FBCEAD /* fonts */,
-				CD274FA918F3A4E300FBCEAD /* header.lua */,
-				CD274FBB18F3A4E400FBCEAD /* Runer.lua */,
-				CD274FA018F3A4E300FBCEAD /* Background.lua */,
-				CD274FA418F3A4E300FBCEAD /* Collision.lua */,
-				CD274FBC18F3A4E400FBCEAD /* Weather.lua */,
+				CDCADCC918F5287D000F137C /* data */,
+				CDBEB34A18F4FD0200AA3C98 /* json.lua */,
+				CDBEB32918F4EDA500AA3C98 /* app.icf */,
+				CDBEB32A18F4EDA500AA3C98 /* arm */,
+				CDBEB32B18F4EDA500AA3C98 /* armTest.lua */,
+				CDBEB32C18F4EDA500AA3C98 /* Background.lua */,
+				CDBEB32D18F4EDA500AA3C98 /* BaseScene.lua */,
+				CDBEB32E18F4EDA500AA3C98 /* Collision.lua */,
+				CDBEB32F18F4EDA500AA3C98 /* fonts */,
+				CDBEB33018F4EDA500AA3C98 /* global.lua */,
+				CDBEB33118F4EDA500AA3C98 /* header.lua */,
+				CDBEB33218F4EDA500AA3C98 /* log.lua */,
+				CDBEB33318F4EDA500AA3C98 /* logger.lua */,
+				CDBEB33418F4EDA500AA3C98 /* main.lua */,
+				CDBEB33518F4EDA500AA3C98 /* Runer.lua */,
+				CDBEB33618F4EDA500AA3C98 /* sklog.lua */,
+				CDBEB33718F4EDA500AA3C98 /* texture */,
+				CDBEB33818F4EDA500AA3C98 /* Weather.lua */,
+				CDBEB34F18F5004200AA3C98 /* CollisionMap.lua */,
 			);
 			name = Resources;
 			path = ../Resources;
@@ -2188,33 +2154,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD274FBD18F3A4E400FBCEAD /* app.icf in Resources */,
-				CD63741B18F4038F00A5D8F2 /* jujian_a0.png in Resources */,
-				CD63740B18F4038400A5D8F2 /* move_mg_2.png in Resources */,
-				CD63741D18F4038F00A5D8F2 /* jujian_a1.png in Resources */,
-				CD63741C18F4038F00A5D8F2 /* jujian_a1.plist in Resources */,
-				CD274FC218F3A4E400FBCEAD /* Collision.lua in Resources */,
-				CD274FD718F3A4E400FBCEAD /* Runer.lua in Resources */,
-				CD274FC418F3A4E400FBCEAD /* Marker Felt.ttf in Resources */,
-				CD63740918F4038400A5D8F2 /* game_bg.png in Resources */,
-				CD63740F18F4038400A5D8F2 /* Res.png in Resources */,
-				CD63742018F403A800A5D8F2 /* armTest.lua in Resources */,
-				CD274FD818F3A4E400FBCEAD /* Weather.lua in Resources */,
-				CD63741A18F4038F00A5D8F2 /* jujian_a0.plist in Resources */,
-				CD63742118F403A800A5D8F2 /* BaseScene.lua in Resources */,
-				CD63742518F403BF00A5D8F2 /* global.lua in Resources */,
-				CD63740C18F4038400A5D8F2 /* move_mg_3.png in Resources */,
-				CD63740818F4038400A5D8F2 /* ccbParticleSnow.png in Resources */,
+				CDBEB33D18F4EDA500AA3C98 /* BaseScene.lua in Resources */,
+				CDBEB34818F4EDA500AA3C98 /* Weather.lua in Resources */,
+				CDBEB33E18F4EDA500AA3C98 /* Collision.lua in Resources */,
+				CDBEB33918F4EDA500AA3C98 /* app.icf in Resources */,
+				CDBEB35018F5004200AA3C98 /* CollisionMap.lua in Resources */,
+				CDBEB34418F4EDA500AA3C98 /* main.lua in Resources */,
 				46C59AD317641FF300F43DC3 /* AudioEngine.lua in Resources */,
-				CD63740E18F4038400A5D8F2 /* Res.plist in Resources */,
-				CD274FBE18F3A4E400FBCEAD /* Background.lua in Resources */,
-				CD63742718F403BF00A5D8F2 /* sklog.lua in Resources */,
-				CD63740A18F4038400A5D8F2 /* move_mg_1.png in Resources */,
-				CD63740D18F4038400A5D8F2 /* move_mg_4.png in Resources */,
-				CD63742618F403BF00A5D8F2 /* main.lua in Resources */,
+				CDBEB33C18F4EDA500AA3C98 /* Background.lua in Resources */,
 				46C59AD417641FF300F43DC3 /* CCBReaderLoad.lua in Resources */,
-				CD274FC618F3A4E400FBCEAD /* header.lua in Resources */,
-				CD63741918F4038F00A5D8F2 /* jujian_a.ExportJson in Resources */,
+				CDBEB34518F4EDA500AA3C98 /* Runer.lua in Resources */,
+				CDBEB34718F4EDA500AA3C98 /* texture in Resources */,
+				CDBEB34318F4EDA500AA3C98 /* logger.lua in Resources */,
+				CDBEB34618F4EDA500AA3C98 /* sklog.lua in Resources */,
+				CDBEB33F18F4EDA500AA3C98 /* fonts in Resources */,
+				CDBEB34018F4EDA500AA3C98 /* global.lua in Resources */,
+				CDBEB33A18F4EDA500AA3C98 /* arm in Resources */,
+				CDBEB34B18F4FD0200AA3C98 /* json.lua in Resources */,
+				CDBEB34218F4EDA500AA3C98 /* log.lua in Resources */,
+				CDCADCCB18F5287D000F137C /* tiled.json in Resources */,
+				CDBEB33B18F4EDA500AA3C98 /* armTest.lua in Resources */,
+				CDBEB34118F4EDA500AA3C98 /* header.lua in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

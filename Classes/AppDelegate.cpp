@@ -11,6 +11,7 @@
 using namespace CocosDenshion;
 
 USING_NS_CC;
+static cocos2d::CCSize designResolutionSize = cocos2d::CCSizeMake(1024, 768);
 
 AppDelegate::AppDelegate()
 {
@@ -25,15 +26,15 @@ bool AppDelegate::applicationDidFinishLaunching()
 {
     // initialize director
     CCDirector *pDirector = CCDirector::sharedDirector();
-    pDirector->setOpenGLView(CCEGLView::sharedOpenGLView());
-
+    CCEGLView* pEGLView = CCEGLView::sharedOpenGLView();
+    pDirector->setOpenGLView(pEGLView);
+    pEGLView->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, kResolutionFixedHeight);
     // turn on display FPS
-    pDirector->setDisplayStats(true);
+    //pDirector->setDisplayStats(true);
 
     // set FPS. the default value is 1.0/60 if you don't call this
     pDirector->setAnimationInterval(1.0 / 60);
-
-    // register lua engine
+     // register lua engine
     CCLuaEngine* pEngine = CCLuaEngine::defaultEngine();
     CCScriptEngineManager::sharedManager()->setScriptEngine(pEngine);
 
@@ -52,7 +53,6 @@ bool AppDelegate::applicationDidFinishLaunching()
 
     std::string path = CCFileUtils::sharedFileUtils()->fullPathForFilename("main.lua");
     pEngine->executeScriptFile(path.c_str());
-
     return true;
 }
 
@@ -68,6 +68,6 @@ void AppDelegate::applicationDidEnterBackground()
 void AppDelegate::applicationWillEnterForeground()
 {
     CCDirector::sharedDirector()->startAnimation();
-
+    
     SimpleAudioEngine::sharedEngine()->resumeBackgroundMusic();
 }

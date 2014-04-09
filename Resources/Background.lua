@@ -18,18 +18,18 @@ local CONST = newConst(SPEED_TABLE)
 function Background:createBackgroundLayer()
 	local _backGroundLayer = CCLayer:create()
 
-	function _backGroundLayer:initContent( )
+	function initContent( )
 		--local bgObject = CCSprite:createWithTexture(textureCache:textureForKey("move_mg_2.png"))
-		self:createbgObject("move_mg_2.png","move_mg_2.png",CONST.BACKGROUND_SPEED1,_visibleSize.height)
-		self:createbgObject("move_mg_1.png","move_mg_1.png",CONST.BACKGROUND_SPEED1,_visibleSize.height*0.7)
-		self:createbgObject("move_mg_3.png","move_mg_4.png",CONST.BACKGROUND_SPEED3,_visibleSize.height*0.65)
+		createbgObject("texture/move_mg_2.png","texture/move_mg_2.png",CONST.BACKGROUND_SPEED1,_visibleSize.height)
+		createbgObject("texture/move_mg_1.png","texture/move_mg_1.png",CONST.BACKGROUND_SPEED1,_visibleSize.height*0.7)
+		createbgObject("texture/move_mg_3.png","texture/move_mg_4.png",CONST.BACKGROUND_SPEED3,_visibleSize.height*0.65)
 
-		local _ground = CCSprite:createWithSpriteFrame(spriteCache:spriteFrameByName("ground.png"))
-     	local groundSize = _ground:boundingBox().size
-     	_ground:setAnchorPoint(ccp(0,0))
-     	_ground:setScale(_visibleSize.width/groundSize.width)
-     	_ground:setPosition(ccp(0,200-groundSize.height))
-    	_backGroundLayer:addChild(_ground)
+		-- local _ground = CCSprite:createWithSpriteFrame(spriteCache:spriteFrameByName("ground.png"))
+		--      	local groundSize = _ground:boundingBox().size
+		--      	_ground:setAnchorPoint(ccp(0,0))
+		--      	_ground:setScale(_visibleSize.width/groundSize.width)
+		--      	_ground:setPosition(ccp(0,200-groundSize.height))
+		--     	_backGroundLayer:addChild(_ground)
 	end
      
     function updatebackGround(node)
@@ -37,7 +37,7 @@ function Background:createBackgroundLayer()
     		node:setPositionX(_visibleSize.width)
     	end
     end
-    function _backGroundLayer:createbgObject( bgObject1,bgObject2,speed,offsetY )
+    function createbgObject( bgObject1,bgObject2,speed,offsetY )
     	-- body
     	if not bgObject1 or not bgObject2 then
     		return
@@ -60,7 +60,7 @@ function Background:createBackgroundLayer()
 			_backGroundLayer:addChild(bgObject)
     	end
     end
-    _backGroundLayer:initContent()
+    initContent()
 	return _backGroundLayer
 end
 

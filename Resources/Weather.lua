@@ -1,7 +1,8 @@
 local Weather = {}
 local visibleSize = CCDirector:sharedDirector():getWinSize()
 local textureCache = CCTextureCache:sharedTextureCache()
-function Weather:initBaseLayer()
+
+function Weather:getBaseLayer()
 	-- body
 	textureCache:addImage("ccbParticleSnow.png")
 	local layer = CCLayerColor:create(ccc4(255,255,255,255))
@@ -11,7 +12,7 @@ end
 
 function Weather:createWeatherLayer()
 	-- body
-	local layer = self:initBaseLayer()
+	local layer = self:getBaseLayer()
 	emitter = CCParticleSnow:create()
 	layer:addChild(emitter,10)
 	emitter:setLife(8)

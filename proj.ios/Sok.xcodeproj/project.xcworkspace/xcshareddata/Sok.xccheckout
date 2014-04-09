@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A52F12BE-EA9D-4F49-B440-96BC35022252</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Sok</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>03B18FD5-D667-490D-8B68-7BA18EFDADCE</key>
+		<string>https://github.com/hbflyhbfly/Sok.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>proj.ios/Sok.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>03B18FD5-D667-490D-8B68-7BA18EFDADCE</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/hbflyhbfly/Sok.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>03B18FD5-D667-490D-8B68-7BA18EFDADCE</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>03B18FD5-D667-490D-8B68-7BA18EFDADCE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Sok</string>
+		</dict>
+	</array>
+</dict>
+</plist>

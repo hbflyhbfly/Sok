@@ -1,24 +1,25 @@
 require "AudioEngine" 
-require "sklog"
 local Runer = require "Runer"
 local Collision = require "Collision" 
 local Background = require "Background"
 local Weather = require "Weather"
+local log = require "log"
 
 function createBaseLayer()
-	local TAG = "BaseScene"
     local visible_size = CCDirector:sharedDirector():getVisibleSize()
     local origin = CCDirector:sharedDirector():getVisibleOrigin()
     local scheduler = CCDirector:sharedDirector():getScheduler()
 
-    local cache = CCSpriteFrameCache:sharedSpriteFrameCache():addSpriteFramesWithFile("Res.plist")
-    CCTextureCache:sharedTextureCache():addImage("move_mg_1.png")
-    CCTextureCache:sharedTextureCache():addImage("move_mg_2.png")
-    CCTextureCache:sharedTextureCache():addImage("move_mg_3.png")
-    CCTextureCache:sharedTextureCache():addImage("move_mg_4.png")
-    CCTextureCache:sharedTextureCache():addImage("worldmap_body_0.png")
-    CCTextureCache:sharedTextureCache():addImage("worldmap_body_1.png")
-    CCTextureCache:sharedTextureCache():addImage("worldmap_body_2.png")
+    CCSpriteFrameCache:sharedSpriteFrameCache():addSpriteFramesWithFile("texture/Res.plist")
+    CCSpriteFrameCache:sharedSpriteFrameCache():addSpriteFramesWithFile("texture/collisions.plist")
+    log.Debugf("plist")
+    CCTextureCache:sharedTextureCache():addImage("texture/move_mg_1.png")
+    CCTextureCache:sharedTextureCache():addImage("texture/move_mg_2.png")
+    CCTextureCache:sharedTextureCache():addImage("texture/move_mg_3.png")
+    CCTextureCache:sharedTextureCache():addImage("texture/move_mg_4.png")
+    --CCTextureCache:sharedTextureCache():addImage("texture/worldmap_body_0.png")
+    --CCTextureCache:sharedTextureCache():addImage("texture/worldmap_body_1.png")
+    --CCTextureCache:sharedTextureCache():addImage("texture/worldmap_body_2.png")
 
     local base_layer = CCLayer:create()
 
@@ -32,7 +33,7 @@ function createBaseLayer()
     local touch_begin_point = nil
 
     local function onTouchBegan(x, y)
-		SKLog(SKLOG_INFO, TAG, "onTouchBegan: %0.2f, %0.2f",x,y);
+		log.Debugf("BaseScene onTouchBegan: %0.2f, %0.2f",x,y);
         touch_begin_point = {x = x, y = y}
 
         if runer:getRunerStatu() ~= Runer.RUNER_STATU.RUNER_JUMP_UP and
@@ -44,14 +45,14 @@ function createBaseLayer()
     end
 
     local function onTouchMoved(x, y)
-        SKLog(SKLOG_INFO, TAG, "onTouchMoved: %0.2f, %0.2f", x, y)
+        log.Debugf("BaseScene onTouchMoved: %0.2f, %0.2f", x, y)
         if touch_begin_point then
             local cx, cy = base_layer:getPosition()
         end
     end
 
     local function onTouchEnded(x, y)
-        SKLog(SKLOG_INFO, TAG, "onTouchEnded: %0.2f, %0.2f", x, y)
+        log.Debugf("BaseScene onTouchEnded: %0.2f, %0.2f", x, y)
         touch_begin_point = nil
     end
 
@@ -67,7 +68,7 @@ function createBaseLayer()
 
     function update(dt)
         runer:updateRuner(dt)
-        check()
+        --check()
     end
 
     function check()
@@ -88,6 +89,6 @@ function createBaseLayer()
     base_layer:addChild(runer)
     collision = Collision:createCollisionLayer()
     base_layer:addChild(collision)
-    base_layer:addChild(Weather:createWeatherLayer())
+    --base_layer:addChild(Weather:createWeatherLayer())
     return base_layer
 end
