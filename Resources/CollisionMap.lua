@@ -2,11 +2,11 @@ local log = require "log"
 local json = require "json"
 require "global"
 local LEVELS = {
-	level1 = "tiled",
-	level2 = "",
-	level3 = "",
-	level4 = "",
-	level5 = "",
+	level1 = "level1",
+	level2 = "level2",
+	level3 = "level3",
+	level4 = "level4",
+	level5 = "level5",
 }
 local FILE_TYPE = ".json"
 
@@ -37,16 +37,16 @@ local CollisionMap = {}
 			collisionMap.tileWidth = s_Visible_Size.width/collisionMap.width
 			--瓦片位置和类型
 			local tileData = _collision_map_data.layers[1].data
-			for i=1,collisionMap.width do
-				for j=*i,collisionMap.height do
-					local index = i*collisionMap.width
+			for i=0,collisionMap.width-1 do
+				for j=0,collisionMap.height-1 do
+					local id = j*collisionMap.width+i+1
 					local mapTile = {}
-					mapTile.type = tileData[j]
-					--mapTile.id = j
+					mapTile.type = tileData[id]
+					mapTile.id = id
 					mapTile.locX = i * collisionMap.tileWidth
-					mapTile.locY = j * collisionMap.tileHeight
+					mapTile.locY = s_Visible_Size.height - (j * collisionMap.tileHeight)
 					table.insert(collisionMap.tiles,mapTile)
-					print(j)
+					--print(j)
 				end
 			end
 			--tileData = _collision_map_data.layers

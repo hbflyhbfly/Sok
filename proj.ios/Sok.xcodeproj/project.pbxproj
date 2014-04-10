@@ -226,7 +226,7 @@
 		CDBEB34818F4EDA500AA3C98 /* Weather.lua in Resources */ = {isa = PBXBuildFile; fileRef = CDBEB33818F4EDA500AA3C98 /* Weather.lua */; };
 		CDBEB34B18F4FD0200AA3C98 /* json.lua in Resources */ = {isa = PBXBuildFile; fileRef = CDBEB34A18F4FD0200AA3C98 /* json.lua */; };
 		CDBEB35018F5004200AA3C98 /* CollisionMap.lua in Resources */ = {isa = PBXBuildFile; fileRef = CDBEB34F18F5004200AA3C98 /* CollisionMap.lua */; };
-		CDCADCCB18F5287D000F137C /* tiled.json in Resources */ = {isa = PBXBuildFile; fileRef = CDCADCCA18F5287D000F137C /* tiled.json */; };
+		CDCADCCB18F5287D000F137C /* level1.json in Resources */ = {isa = PBXBuildFile; fileRef = CDCADCCA18F5287D000F137C /* level1.json */; };
 		ED35C0C718323498002A0750 /* CCArmatureAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED35C03818323497002A0750 /* CCArmatureAnimation.cpp */; };
 		ED35C0C818323498002A0750 /* CCProcessBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED35C03A18323497002A0750 /* CCProcessBase.cpp */; };
 		ED35C0C918323498002A0750 /* CCTween.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED35C03C18323497002A0750 /* CCTween.cpp */; };
@@ -743,7 +743,7 @@
 		CDBEB33818F4EDA500AA3C98 /* Weather.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Weather.lua; sourceTree = "<group>"; };
 		CDBEB34A18F4FD0200AA3C98 /* json.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = json.lua; sourceTree = "<group>"; };
 		CDBEB34F18F5004200AA3C98 /* CollisionMap.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CollisionMap.lua; sourceTree = "<group>"; };
-		CDCADCCA18F5287D000F137C /* tiled.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tiled.json; sourceTree = "<group>"; };
+		CDCADCCA18F5287D000F137C /* level1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level1.json; sourceTree = "<group>"; };
 		ED35C03818323497002A0750 /* CCArmatureAnimation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCArmatureAnimation.cpp; sourceTree = "<group>"; };
 		ED35C03918323497002A0750 /* CCArmatureAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCArmatureAnimation.h; sourceTree = "<group>"; };
 		ED35C03A18323497002A0750 /* CCProcessBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCProcessBase.cpp; sourceTree = "<group>"; };
@@ -1768,7 +1768,7 @@
 		CDCADCC918F5287D000F137C /* data */ = {
 			isa = PBXGroup;
 			children = (
-				CDCADCCA18F5287D000F137C /* tiled.json */,
+				CDCADCCA18F5287D000F137C /* level1.json */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -2172,7 +2172,7 @@
 				CDBEB33A18F4EDA500AA3C98 /* arm in Resources */,
 				CDBEB34B18F4FD0200AA3C98 /* json.lua in Resources */,
 				CDBEB34218F4EDA500AA3C98 /* log.lua in Resources */,
-				CDCADCCB18F5287D000F137C /* tiled.json in Resources */,
+				CDCADCCB18F5287D000F137C /* level1.json in Resources */,
 				CDBEB33B18F4EDA500AA3C98 /* armTest.lua in Resources */,
 				CDBEB34118F4EDA500AA3C98 /* header.lua in Resources */,
 			);
