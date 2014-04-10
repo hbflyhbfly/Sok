@@ -30,14 +30,14 @@ bool AppDelegate::applicationDidFinishLaunching()
     pDirector->setOpenGLView(pEGLView);
     pEGLView->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, kResolutionFixedHeight);
     // turn on display FPS
-    //pDirector->setDisplayStats(true);
+    pDirector->setDisplayStats(true);
 
     // set FPS. the default value is 1.0/60 if you don't call this
     pDirector->setAnimationInterval(1.0 / 60);
      // register lua engine
     CCLuaEngine* pEngine = CCLuaEngine::defaultEngine();
     CCScriptEngineManager::sharedManager()->setScriptEngine(pEngine);
-    
+
     CCLuaStack *pStack = pEngine->getLuaStack();
     lua_State *tolua_s = pStack->getLuaState();
     tolua_extensions_ccb_open(tolua_s);
@@ -51,8 +51,9 @@ bool AppDelegate::applicationDidFinishLaunching()
     CCFileUtils::sharedFileUtils()->addSearchPath("script");
 #endif
 
-    std::string path = CCFileUtils::sharedFileUtils()->fullPathForFilename("main.lua");
+    std::string path = CCFileUtils::sharedFileUtils()->fullPathForFilename("src/main.lua");
     pEngine->executeScriptFile(path.c_str());
+    
     return true;
 }
 
