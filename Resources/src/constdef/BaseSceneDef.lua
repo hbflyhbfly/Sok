@@ -4,11 +4,19 @@ local M = {}
 M.LAYER_TYPE = 
 {  
 	LAYER_TYPE_INVAILD = -1,				--无效层
-	LAYER_TYPE_BG  	   = -128,				--背景层
-	LAYER_TYPE_SCENE   = -64,				--场景层 用于主要逻辑处理的一层
-	LAYER_TYPE_MENU    = -16,				--界面UI层
-	LAYER_TYPE_TEMP	   = -4,				--临时层
+	LAYER_TYPE_BG  	   = -64,				--背景层
+	LAYER_TYPE_SCENE   = -8,				--场景层 用于主要逻辑处理的一层
+	LAYER_TYPE_MENU    = -4,				--界面UI层
+	LAYER_TYPE_TEMP	   = -2,				--临时层
 }
+
+--背景场景移动速度
+M.SPEED_TABLE = 
+    {  
+        BACKGROUND_SPEED1 = 5,  
+        BACKGROUND_SPEED2 = 10,
+        BACKGROUND_SPEED3 = 15
+    }  
 
 
 local modename = "BaseSceneDef"

@@ -211,6 +211,7 @@
 		CD280EC118F65690009AAA96 /* app.icf in Resources */ = {isa = PBXBuildFile; fileRef = CD280EBE18F65690009AAA96 /* app.icf */; };
 		CD280EC818F68EF9009AAA96 /* res in Resources */ = {isa = PBXBuildFile; fileRef = CD280EC618F68EF9009AAA96 /* res */; };
 		CD280EC918F68EF9009AAA96 /* src in Resources */ = {isa = PBXBuildFile; fileRef = CD280EC718F68EF9009AAA96 /* src */; };
+		CDCD10FD18F78A6100545A92 /* extern.lua in Resources */ = {isa = PBXBuildFile; fileRef = CDCD10FC18F78A6100545A92 /* extern.lua */; };
 		ED35C0C718323498002A0750 /* CCArmatureAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED35C03818323497002A0750 /* CCArmatureAnimation.cpp */; };
 		ED35C0C818323498002A0750 /* CCProcessBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED35C03A18323497002A0750 /* CCProcessBase.cpp */; };
 		ED35C0C918323498002A0750 /* CCTween.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED35C03C18323497002A0750 /* CCTween.cpp */; };
@@ -712,6 +713,7 @@
 		CD280EBE18F65690009AAA96 /* app.icf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = app.icf; sourceTree = "<group>"; };
 		CD280EC618F68EF9009AAA96 /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
 		CD280EC718F68EF9009AAA96 /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; path = src; sourceTree = "<group>"; };
+		CDCD10FC18F78A6100545A92 /* extern.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = extern.lua; sourceTree = "<group>"; };
 		ED35C03818323497002A0750 /* CCArmatureAnimation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCArmatureAnimation.cpp; sourceTree = "<group>"; };
 		ED35C03918323497002A0750 /* CCArmatureAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCArmatureAnimation.h; sourceTree = "<group>"; };
 		ED35C03A18323497002A0750 /* CCProcessBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCProcessBase.cpp; sourceTree = "<group>"; };
@@ -1727,6 +1729,7 @@
 		46C59AD017641FF300F43DC3 /* script */ = {
 			isa = PBXGroup;
 			children = (
+				CDCD10FC18F78A6100545A92 /* extern.lua */,
 				46C59AD117641FF300F43DC3 /* AudioEngine.lua */,
 				46C59AD217641FF300F43DC3 /* CCBReaderLoad.lua */,
 			);
@@ -2103,6 +2106,7 @@
 				CD280EC818F68EF9009AAA96 /* res in Resources */,
 				46C59AD317641FF300F43DC3 /* AudioEngine.lua in Resources */,
 				46C59AD417641FF300F43DC3 /* CCBReaderLoad.lua in Resources */,
+				CDCD10FD18F78A6100545A92 /* extern.lua in Resources */,
 				CD280EC918F68EF9009AAA96 /* src in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

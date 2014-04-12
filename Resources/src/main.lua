@@ -1,6 +1,6 @@
 require "src/scene/GameScene"
 local log = require "src/util/log"
-
+local GameScene = require "src/scene/GameScene"
 -- for CCLuaEngine traceback
 function __G__TRACKBACK__(msg)
     print("----------------------------------------")
@@ -16,7 +16,10 @@ local function main()
     collectgarbage("setpause", 100)
     collectgarbage("setstepmul", 5000)
 	log.Info("Game start-------")
-    local scene_game = createGameScene()
+    local scene_game = GameScene:create()
+    --local scene_game2 = GameScene:create()
+    --log.Info("main " .. tostring(scene_game))
+    --log.Info("main" .. tostring(scene_game2))
     CCDirector:sharedDirector():runWithScene(scene_game)
 end
 

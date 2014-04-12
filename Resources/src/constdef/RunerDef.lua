@@ -2,12 +2,12 @@
 local M = {}
 -------------------------------------ENUM START-----------------------------------
 -- 人物状态
-M.BASE_RUNER_STATUS = 
+M.RUNER_STATUS = 
 {  
+    STATUS_DROP_DOWN = 3,
     STATUS_NORMAL = 0, 
     STATUS_JUMP_UP = 1,
-    STATUS_JUMP_DOWN = 2,
-    STATUS_CROUCH = 3,
+    STATUS_CROUCH = 2,
 }
 -------------------------------------ENUM END-----------------------------------
 
@@ -15,20 +15,30 @@ M.BASE_RUNER_STATUS =
 
 -------------------------------------CONST START-----------------------------------
 --角色下落重力加速度/跳跃上升的初始速度
-M.ACCELERATION_TABLE = 
+M.ACCELERATION_VALUE = 
 {
-    ACCELERATION_G = 0.9,
-    ACCELERATION_UP = 9
+    ACCELERATION_G = -3,
+    ACCELERATION_UP = 25
+}
+
+M.RUNER_TAG = 
+{
+    RUNER_TAG_1 = 1
+}
+
+M.RUNER_Z_ORDER = 
+{
+    RUNER_Z_ORDER_1 = 1
 }
 -------------------------------------CONST END-----------------------------------
 
 
-local modename = "RunerStatus"
+local modename = "RunerDef"
 local proxy = {}
 local mt    = {
     __index = M,
     __newindex =  function (t ,k ,v)
-        print("RunerStatus attemp to update a read-only table")
+        print("RunerDef attemp to update a read-only table")
     end
 } 
 setmetatable(proxy,mt)

@@ -1,0 +1,17 @@
+{ 
+ "runer1":{
+         "id":"1",
+         "name":"",
+         "life":"",
+         "status":"STATUS_NORMAL",
+         "icon":"NVZHUJUE",
+         "type":"",
+         "visible":true,
+         "locX":200,
+         "locY":320,
+         "boneName":"tou",
+         "action":"RUN",
+         "frame_star":"res/arm/loading_0",
+         "frame_num":12
+        }
+}
