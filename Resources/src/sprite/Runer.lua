@@ -11,7 +11,6 @@ local notificationCenter = CCNotificationCenter:sharedNotificationCenter()
 local RUNER_Z_ORDER = 1
 --区分
 local RUNER_TAG = 11
---帧缓冲
 --通知信息
 local message = {
     JUMP = RunerDef.RUNER_STATUS.STATUS_JUMP_UP,
@@ -66,9 +65,9 @@ function Runer:create( name )
 	_runer._type = createdRuner.type
 	_runer._loc.x = createdRuner.locX
 	_runer._loc.y = createdRuner.locY
-	_runer._sprite:setPosition(_runer._loc.x,_runer._loc.y)
+	_runer._sprite:setPosition(_runer._loc.x,330)
+    _runer._sprite:setAnchorPoint(ccp(0,0))
 	_runer._velocity = 0
-
 	initSkin(_runer._sprite,createdRuner.frame_star,createdRuner.frame_num,createdRuner.boneName)
 
     local index = 1
@@ -94,31 +93,45 @@ function Runer:create( name )
     		
     	end
     end
+    
     function _runer:jumpLogic()
         local runerSprite = self._sprite
     	self._velocity = self._velocity + RunerDef.ACCELERATION_VALUE.ACCELERATION_G
         local runerSpriteLocY = runerSprite:getPositionY()
         runerSprite:setPositionY(runerSpriteLocY + self._velocity)
+        if self._velocity <= 0 then
+            self:changeStatus(RunerDef.RUNER_STATUS.STATUS_DROP_DOWN)
+        end
     end
+
     function _runer:dropLogic()
         local runerSprite = self._sprite
-        self._velocity = self._velocity + RunerDef.ACCELERATION_VALUE.ACCELERATION_G
         local runerSpriteLocY = runerSprite:getPositionY()
         runerSprite:setPositionY(runerSpriteLocY + self._velocity)
+        self._velocity = self._velocity + RunerDef.ACCELERATION_VALUE.ACCELERATION_G
+            if runerSprite:getPositionY() <= self._loc.y then
+            self:changeStatus(RunerDef.RUNER_STATUS.STATUS_NORMAL)
+            end
     end
-    function _runer:squatLogic()
 
+    function _runer:squatLogic()
+        
     end
+
     function _runer:normalLogic()
         local runerSprite = self._sprite
-        runerSprite:setPositionY(self._loc.y)
-        print(self._loc.y)
+        local runerSpriteLocY = runerSprite:getPositionY()
+        runerSprite:setPositionY(runerSpriteLocY + self._velocity)
+        self._velocity = self._velocity + RunerDef.ACCELERATION_VALUE.ACCELERATION_G
+        if runerSprite:getPositionY() <= self._loc.y then
+            runerSprite:setPositionY(self._loc.y)
+        end
     end
+
     function _runer:changeStatus(status)
     	if RunerDef.RUNER_STATUS.STATUS_NORMAL == status then
             self._velocity = 0
         elseif RunerDef.RUNER_STATUS.STATUS_DROP_DOWN == status then
-            
     	elseif RunerDef.RUNER_STATUS.STATUS_JUMP_UP == status then
             self._velocity = RunerDef.ACCELERATION_VALUE.ACCELERATION_UP
     	elseif RunerDef.RUNER_STATUS._STATUS_SQUAT == status then
@@ -126,6 +139,7 @@ function Runer:create( name )
     	end
     	self._status = status
     end
+
     function getMessage(obj)
         _runer:changeStatus(message[obj])
         --notificationCenter:unregisterScriptObserver(_runer._sprite, obj)

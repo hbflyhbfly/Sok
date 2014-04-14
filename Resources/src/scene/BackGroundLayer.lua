@@ -43,7 +43,7 @@ local function createBackgroundLayer()
     end
 
     local function initContent( )
-        createbgObject("res/texture/move_1.png","res/texture/move_1.png",0,0)
+        --createbgObject("res/texture/move_1.png","res/texture/move_1.png",0,0)
         createbgObject("res/texture/move_2.png","res/texture/move_2.png",CONST_SPEED.BACKGROUND_SPEED1,0)
         
         --createbgObject("res/texture/move_mg_3.png","res/texture/move_mg_4.png",CONST_SPEED.BACKGROUND_SPEED3,_visible_size.height*0.65)

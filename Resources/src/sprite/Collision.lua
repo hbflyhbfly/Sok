@@ -50,7 +50,6 @@ function Collision:create( id,locX,locY )
 	_collision._sprite:setPosition(_collision._loc.x,_collision._loc.y)
 	_collision._velocity = CollisionDef.ACCELERATION_VALUE.ACCELERATION_3
 	function _collision:move()
-
 		if self._activity then
 			_collision._sprite:setPositionX(_collision._sprite:getPositionX() - self._velocity)
 			if _collision._sprite:getPositionX()<=-_collision._sprite:getContentSize().width then

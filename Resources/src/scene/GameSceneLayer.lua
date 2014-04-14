@@ -81,15 +81,18 @@ local function createGameSceneLayer()
     end
 
     function layer:updateRuner(dt)
-        --self._runer:run()
+        self._runer:run()
     end
 
     function layer:checkCollision(collisions)
+        local isCollision = false
         local runer = self._runer
         local collisions = self._a_collisions
         local runerRect = runer._sprite:boundingBox()
         local runerSize = runerRect.size
         for k,v in pairs(collisions) do
+            --print(collisionRect:getMaxY())
+
             local collisionRect = v._sprite:boundingBox()
             local foot = CCRectMake(runerRect:getMidX()-runerSize.width/4,runerRect:getMinY(),
             runerSize.width/2,5)
@@ -99,36 +102,41 @@ local function createGameSceneLayer()
             5,runerSize.height/2)
             local right = CCRectMake(runerRect:getMaxX()-5,runerRect:getMidY()-runerSize.height/4,
             5,runerSize.height/2)
+            --runer._loc.y = 0
+            -- if collisionRect:containsPoint(ccp(runerRect:getMidX(),runerRect:getMinY())) then
+            --     --print("x:"..collisionRect:getMinX().."y:"..collisionRect:getMinY().."sx"..collisionRect:getMaxX().."sy:"..collisionRect:getMaxY())
+            --     --print(runerRect:getMinY().."yibanban"..collisionRect:getMaxY())
+            --     runer._loc.y = collisionRect:getMaxY()
+            --     --runer:changeStatus(RunerDef.RUNER_STATUS.STATUS_NORMAL)
+            -- end
 
-            if collisionRect:intersectsRect(foot) then
-                runer._loc.y = collisionRect:getMaxY()+2
+            local ground = CCRectMake(collisionRect:getMinX(),collisionRect:getMaxY()-70,collisionRect:getMaxX()-collisionRect:getMinX(),40)
+            if ground:intersectsRect(foot) then
+                runer._loc.y = runerRect:getMinY()-40
                 runer:changeStatus(RunerDef.RUNER_STATUS.STATUS_NORMAL)
             else
-                runer:changeStatus(RunerDef.RUNER_STATUS.STATUS_DROP_DOWN)
+                runer._loc.y = 0
             end
 
+            if collisionRect:intersectsRect(head) then
+                isCollision = true
+            elseif collisionRect:intersectsRect(left) then
 
-
-
-
-            -- if collisionRect:intersectsRect(head) then
+            elseif collisionRect:intersectsRect(right) then
                 
-            -- elseif collisionRect:intersectsRect(left) then
+            end
+            if isCollision then
+                --可穿透可使用
+                if CollisionDef.COLLISION_TYPE[v._type] == CollisionDef.COLLISION_TYPE.COLLISION_GOLD then
+                    v._activity = false
+                --阻挡
+                elseif CollisionDef.COLLISION_TYPE[v._type] == CollisionDef.COLLISION_TYPE.COLLISION_GROUND then
 
-            -- elseif collisionRect:intersectsRect(right) then
-                
+                --可穿透不可使用
+                elseif CollisionDef.COLLISION_TYPE[v._type] == CollisionDef.COLLISION_TYPE.COLLISION_2 then
 
-            -- end
-            -- --可穿透可使用
-            -- if CollisionDef.COLLISION_TYPE[v._type] == CollisionDef.COLLISION_TYPE.COLLISION_GOLD then
-                
-            -- --阻挡
-            -- elseif CollisionDef.COLLISION_TYPE[v._type] == CollisionDef.COLLISION_TYPE.COLLISION_GROUND then
-
-            -- --可穿透不可使用
-            -- elseif CollisionDef.COLLISION_TYPE[v._type] == CollisionDef.COLLISION_TYPE.COLLISION_2 then
-
-            -- end
+                end
+            end
         end 
     end
     function layer:onTouchBegan(x, y)
