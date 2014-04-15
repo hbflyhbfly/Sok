@@ -20,7 +20,6 @@ function Collision:create( id,locX,locY )
 	_collision._id = ""
 	_collision._name = ""
 	_collision._type = nil
-	_collision._collisionStatu = ""
 	_collision._sprite = nil
 	_collision._velocity = 0
 	_collision._loc = {
@@ -43,7 +42,7 @@ function Collision:create( id,locX,locY )
 	end
 
 	_collision._name = createdCollision.name
-	_collision._type = createdCollision.type
+	_collision._type = CollisionDef.COLLISION_TYPE[createdCollision.type]
 	_collision._loc.x = locX
 	_collision._loc.y = locY
 	_collision._sprite = CCSprite:createWithSpriteFrame(cache:spriteFrameByName(createdCollision.icon))

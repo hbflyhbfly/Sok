@@ -1,5 +1,15 @@
 local M = {}
 
+M.DEF_DEFAULT_BASE = 1
+M.DEF_DEFAULT_SCENE_BASE = DEF_DEFAULT_BASE + 0                --场景id从1开始
+M.DEF_DEFAULT_ANI_BASE = DEF_DEFAULT_BASE + 500                --动画id从500开始
+M.DEF_DEFAULT_UI_BASE = DEF_DEFAULT_BASE + 3000                --UI的id从3000开始
+M.DEF_DEFAULT_SKILL_BASE = DEF_DEFAULT_BASE + 8000             --技能id从8000开始
+M.DEF_DEFAULT_MOUNT_BASE = DEF_DEFAULT_BASE + 10000            --坐骑id从10000
+M.DEF_DEFAULT_PET_BASE = DEF_DEFAULT_BASE + 12000              --宠物id从12000开始
+M.DEF_DEFAULT_ITEM_BASE = DEF_DEFAULT_BASE + 14000             --道具(包括障碍物)id从14000开始
+M.DEF_DEFAULT_BUFF_BASE = DEF_DEFAULT_BASE + 16000             --Buff id从16000开始
+
 M.BASE_SRC_NAME = 
 {
     --场景资源前缀 scene_id_layersequence
@@ -21,8 +31,8 @@ M.BASE_SRC_NAME =
 
 M.ACTION_TYPE = 
 {
-    STAND = 0,                          --站立
-    JUMP = 1,                           --跳跃
+    STAND = 1,                          --站立
+    JUMP = 4,                           --跳跃
     FLY = 8,                            --飞行
     ATTACK = 16,                        --攻击
     MOUNT = 32,                         --坐骑

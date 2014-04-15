@@ -30,6 +30,7 @@ local function createGameScene()
     local touch_begin_point = nil
     --场景初始化
     local function init()
+        CCArmatureDataManager:sharedArmatureDataManager():addArmatureFileInfo("res/arm/paokunv.png","res/arm/paokunv.plist","res/arm/paokunv.ExportJson")
         CCSpriteFrameCache:sharedSpriteFrameCache():addSpriteFramesWithFile("res/texture/Res.plist")
         CCSpriteFrameCache:sharedSpriteFrameCache():addSpriteFramesWithFile("res/texture/collisions.plist")
         CCSpriteFrameCache:sharedSpriteFrameCache():addSpriteFramesWithFile("res/texture/ui_zhedang.plist")

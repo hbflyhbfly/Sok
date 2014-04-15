@@ -1,5 +1,6 @@
 local log = require "src/util/log"
-local ViewGameScene = require "src/ui/ViewGameScene"
+require "src/ui/ViewGameScene"
+local UIManager = require "src/ui/UIManager"
 
 --这个可以视为类名
 local GameViewLayer = {}
@@ -20,7 +21,8 @@ local function createGameViewLayer()
 
     local function init()   
     	view_game_scene = ViewGameScene:create()
-    	game_view_layer:addChild(view_game_scene)
+        UIManager:AddLayer(game_view_layer,"game_layer",view_game_scene,1000)
+        UIManager:RegisterUpdate("game_layer")
     end
 
     function game_view_layer:onTouchBegan(x, y)
@@ -51,7 +53,8 @@ local function createGameViewLayer()
     end
 
     function game_view_layer:update(dt)
-    	--log.Info("game_view_layer update" .. dt)
+        --log.Info("game_view_layer update" .. dt)
+        UIManager:Update(dt)
     end
 
     init()

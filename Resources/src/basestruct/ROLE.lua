@@ -1,27 +1,20 @@
-local FileManager = require "src/util/FileManager"
 require "src/constdef/RunerDef"
 local ROLE = {}
-function ROLE:create()
-	-- body
-	_role = {}
-	_role._id = ""
-	_role._name = ""
-	_role._skill = {}
-	_role._icon = ""
-	_role._type = ""
-	_role._runerStatu = ""
-	_role._loc = {
-		x = 0,
-		y = 0
+	ROLE._id = ""
+	ROLE._name = ""
+	ROLE._skill = {}
+	ROLE._icon = ""
+	ROLE._type = ""
+	ROLE._level = 1
+	ROLE._EXP = 0
+	ROLE._HP = 3
+	ROLE._power = 0
+	ROLE._statu = RunerDef.STATUS_NORMAL
+	ROLE._velocity = 0
+	ROLE._loc = {
+		_x = 0,
+		_y = 0
 	}
-	_role._velocity = 0
-
-	function _role:init()
-		
-		--初始化
-	end
-	_role:init()
-	return _role
-
-end
+	ROLE._action = ""
+	ROLE._ground = 0
 return ROLE
