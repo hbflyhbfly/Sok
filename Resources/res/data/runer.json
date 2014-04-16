@@ -8,7 +8,7 @@
          "type":"",
          "visible":true,
          "locX":200,
-         "locY":0,
+         "locY":350,
          "boneName":"head",
          "action":"RUN",
          "frame_star":"res/arm/loading_0",

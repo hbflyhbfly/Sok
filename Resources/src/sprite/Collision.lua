@@ -32,12 +32,12 @@ function Collision:create( id,locX,locY )
 	self.allCollisionData = FileManager:readJsonFileToTable(COLLISION_DATA_FILE)
 
 	if nil == self.allCollisionData then
-		log:Debug("collision:create:数据取得失败")
+		log.Debug("collision:create:数据取得失败")
 		return nil
 	end
 	local createdCollision = self.allCollisionData["collision"..id]
 	if nil == createdCollision then
-		log:Debug("collision:create:该物体不存在")
+		log.Debug("collision:create:该物体不存在")
 		return nil
 	end
 
@@ -48,16 +48,7 @@ function Collision:create( id,locX,locY )
 	_collision._sprite = CCSprite:createWithSpriteFrame(cache:spriteFrameByName(createdCollision.icon))
 	_collision._sprite:setPosition(_collision._loc.x,_collision._loc.y)
 	_collision._velocity = CollisionDef.ACCELERATION_VALUE.ACCELERATION_3
-	function _collision:move()
-		if self._activity then
-			_collision._sprite:setPositionX(_collision._sprite:getPositionX() - self._velocity)
-			if _collision._sprite:getPositionX()<=-_collision._sprite:getContentSize().width then
-				self._activity = false
-			end
-		end
-		
-		-- body
-	end
+	_collision._activity = true
 	function _collision:destroy()
 		-- 死亡动画
 	end

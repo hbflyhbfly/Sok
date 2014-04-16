@@ -1,21 +1,21 @@
-local Item  = require "src/logic/Item"
+local Item  = require "src/basestruct/Item"
 local FileManager = require "src/util/FileManager"
 local ITEM_DADA_FILE = "item.json"
-
+local itemkey = "item"
 local ItemPool = {}
 
-	local ItemPool._vecItemPool = {}
+	ItemPool._vecItemPool = {}
 
 	function ItemPool:Close()
 		
-		for k,v in pairs(ItemPool._vecItemPool) do
-			table.remove(ItemPool._vecItemPool,v)
-		end
+		for k,v in pairs(ItemPool._vecItemPool[itemkey]) do
+            ItemPool._vecItemPool[itemkey] = nil
+        end
 
 	end
 
 	function ItemPool:GetCount()
-		return #ItemPool._vecItemPool
+		return #ItemPool._vecItemPool[itemkey]
 	end
 
 	function ItemPool:GetIndex(itemIndex)
@@ -23,9 +23,9 @@ local ItemPool = {}
 			return nil
 		end
 
-		for k,v in ipairs(ItemPool._vecItemPool) do
-			Item item = v
-			if item._itemIndex = itemIndex then
+		for k,v in ipairs(ItemPool._vecItemPool[itemkey]) do
+			local item = v
+			if item._itemIndex == itemIndex then
 				return item
 			end
 		end
@@ -38,8 +38,8 @@ local ItemPool = {}
 			return nil
 		end
 
-		for k,v in pairs(ItemPool._vecItemPool) do
-			Item item = v
+		for k,v in pairs(ItemPool._vecItemPool[itemkey]) do
+			local  item = v
 			if item ~= nil and item._itemName == itemname then 
 				return item
 			end
@@ -50,8 +50,8 @@ local ItemPool = {}
 
 	function ItemPool:GetItemByID(itemID)
 
-		for k,v in pairs(ItemPool._vecItemPool) do
-			Item item = v
+		for k,v in pairs(ItemPool._vecItemPool[itemkey]) do
+			local  item = v
 			if item ~= nil and item._itemID == itemID  then
 				return item
 			end
@@ -61,16 +61,15 @@ local ItemPool = {}
 
 	function ItemPool:AddItem(item)
 		if item ~= nil then
-			table.insert(ItemPool._vecItemPool, item)
+			table.insert(ItemPool._vecItemPool[itemkey], item)
 		end
-
 	end
 
 	function ItemPool:DelItem(itemName)
-		for k,v in pairs(ItemPool._vecItemPool) do
-			Item item = v
+		for k,v in pairs(ItemPool._vecItemPool[itemkey]) do
+			local  item = v
 			if item ~= nil and itemname == item._itemName then
-				table.remove(ItemPool._vecItemPool, item)
+				table.remove(ItemPool._vecItemPool[itemkey], item)
 			end
 		end
 	end

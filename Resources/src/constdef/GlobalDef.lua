@@ -1,14 +1,14 @@
 local M = {}
 
 M.DEF_DEFAULT_BASE = 1
-M.DEF_DEFAULT_SCENE_BASE = DEF_DEFAULT_BASE + 0                --场景id从1开始
-M.DEF_DEFAULT_ANI_BASE = DEF_DEFAULT_BASE + 500                --动画id从500开始
-M.DEF_DEFAULT_UI_BASE = DEF_DEFAULT_BASE + 3000                --UI的id从3000开始
-M.DEF_DEFAULT_SKILL_BASE = DEF_DEFAULT_BASE + 8000             --技能id从8000开始
-M.DEF_DEFAULT_MOUNT_BASE = DEF_DEFAULT_BASE + 10000            --坐骑id从10000
-M.DEF_DEFAULT_PET_BASE = DEF_DEFAULT_BASE + 12000              --宠物id从12000开始
-M.DEF_DEFAULT_ITEM_BASE = DEF_DEFAULT_BASE + 14000             --道具(包括障碍物)id从14000开始
-M.DEF_DEFAULT_BUFF_BASE = DEF_DEFAULT_BASE + 16000             --Buff id从16000开始
+M.DEF_DEFAULT_SCENE_BASE = M.DEF_DEFAULT_BASE + 0                --场景id从1开始
+M.DEF_DEFAULT_ANI_BASE = M.DEF_DEFAULT_BASE + 500                --动画id从500开始
+M.DEF_DEFAULT_UI_BASE = M.DEF_DEFAULT_BASE + 3000                --UI的id从3000开始
+M.DEF_DEFAULT_SKILL_BASE = M.DEF_DEFAULT_BASE + 8000             --技能id从8000开始
+M.DEF_DEFAULT_MOUNT_BASE = M.DEF_DEFAULT_BASE + 10000            --坐骑id从10000
+M.DEF_DEFAULT_PET_BASE = M.DEF_DEFAULT_BASE + 12000              --宠物id从12000开始
+M.DEF_DEFAULT_ITEM_BASE = M.DEF_DEFAULT_BASE + 14000             --道具(包括障碍物)id从14000开始
+M.DEF_DEFAULT_BUFF_BASE = M.DEF_DEFAULT_BASE + 16000             --Buff id从16000开始
 
 M.BASE_SRC_NAME = 
 {
@@ -23,22 +23,13 @@ M.BASE_SRC_NAME =
     --UI元素资源前缀 ui_id_name_index
     PRE_UI = "ui_",
 
-    SUFFIX_PNG = "_png",
-    SUFFIX_PVER = "_pvr",
-    SUFFIX_PLIST = "_plist" 
+    SUFFIX_PNG = ".png",
+    SUFFIX_PVER = ".pvr",
+    SUFFIX_PLIST = ".plist",
+    SUFFIX_EXPORT_JSON = ".ExportJson" 
 }
 
 
-M.ACTION_TYPE = 
-{
-    STAND = 1,                          --站立
-    JUMP = 4,                           --跳跃
-    FLY = 8,                            --飞行
-    ATTACK = 16,                        --攻击
-    MOUNT = 32,                         --坐骑
-    SPECIAL_EFFECT1 = 64,               --可能是降龙十八掌等特效动画
-    SPECIAL_EFFECT2 = 128
-}
 
 
 M.OS_TYPE = 

@@ -19,7 +19,36 @@ M.RUNER_COLLISION_AREA =
     AREA_FOOT = 0x0003,
     AREA_LEFT = 0x0004,
     AREA_RIGHT = 0x0005
+}
 
+M.ACTION_TYPE = 
+{
+
+    STAND = 1,                          --站立
+    JUMP = 4,                           --跳跃
+    FLY = 8,                            --飞行
+    ATTACK = 16,                        --攻击
+    MOUNT = 32,                         --坐骑
+    RUN = 64,
+    SPECIAL_EFFECT1 = 128,               --可能是降龙十八掌等特效动画
+    SPECIAL_EFFECT2 = 256
+
+}
+
+M.ANI_TYPE = 
+{
+    BONE = "bone",                      --骨骼动画
+    FRAME = "frame"                     --帧动画
+}
+
+M.ANI_PART = 
+{
+    HEAD = "head",                      --头
+    BODY = "body",                      --身体
+    LEGL1 = "legl1",                    --左腿1
+    LEGL2 = "legl2",                    --左腿2
+    LEGR1 = "legr1",                    --右腿1
+    LEGR2 = "legr2"                     --右腿2
 }
 
 -------------------------------------CONST START-----------------------------------

@@ -34,7 +34,9 @@ function RunerLogic:create( name )
 	_runer._ground = 0
 	_runer._action = createdRuner.action
     _runer._icon = createdRuner.icon
-    --print(_runer._action)
+    _runer._frame_star = createdRuner.frame_star
+    _runer._frame_num = createdRuner.frame_num
+    _runer._boneName = createdRuner.boneName
     function _runer:run()
     	if RunerDef.RUNER_STATUS.STATUS_NORMAL == self._status then
             self:normalLogic()
@@ -48,23 +50,19 @@ function RunerLogic:create( name )
     end
     
     function _runer:jumpLogic()
-        local runerSprite = self._sprite
+        self._loc._y = self._loc._y + self._velocity
     	self._velocity = self._velocity + RunerDef.ACCELERATION_VALUE.ACCELERATION_G
-        local runerSpriteLocY = runerSprite:getPositionY()
-        runerSprite:setPositionY(runerSpriteLocY + self._velocity)
         if self._velocity <= 0 then
             self:changeStatus(RunerDef.RUNER_STATUS.STATUS_DROP_DOWN)
         end
     end
 
     function _runer:dropLogic()
-        local runerSprite = self._sprite
-        local runerSpriteLocY = runerSprite:getPositionY()
-        runerSprite:setPositionY(runerSpriteLocY + self._velocity)
+        self._loc._y = self._loc._y + self._velocity
         self._velocity = self._velocity + RunerDef.ACCELERATION_VALUE.ACCELERATION_G
-            if runerSprite:getPositionY() <= self._ground then
+        if self._loc._y <= self._ground then
             self:changeStatus(RunerDef.RUNER_STATUS.STATUS_NORMAL)
-            end
+        end
     end
 
     function _runer:squatLogic()
@@ -72,12 +70,10 @@ function RunerLogic:create( name )
     end
 
     function _runer:normalLogic()
-        local runerSprite = self._sprite
-        local runerSpriteLocY = runerSprite:getPositionY()
-        runerSprite:setPositionY(runerSpriteLocY + self._velocity)
+        self._loc._y = self._loc._y + self._velocity
         self._velocity = self._velocity + RunerDef.ACCELERATION_VALUE.ACCELERATION_G
-        if runerSprite:getPositionY() <= self._ground then
-        	self._loc.y = self._ground
+        if self._loc._y <= self._ground then
+        	self._loc._y = self._ground
         end
     end
 
@@ -92,6 +88,10 @@ function RunerLogic:create( name )
     		
     	end
     	self._status = status
+    end
+    function _runer:getStatus()
+        return self._status
+        -- body
     end
 	return _runer
 end

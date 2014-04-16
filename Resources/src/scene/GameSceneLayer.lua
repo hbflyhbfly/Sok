@@ -9,6 +9,7 @@ local Runer = require "src/sprite/Runer"
 local GameMainLogic = require "src/logic/GameMainLogic"
 local RunerLogic = require "src/logic/RunerLogic"
 require "src/logic/DataCenter"
+require "src/constdef/DataConstDef"
 
 --这个可以视为类名
 local GameSceneLayer = {}
@@ -16,32 +17,38 @@ local GameSceneLayer = {}
 --这些变量可以视为类内成员变量
 local _visible_size = CCDirector:sharedDirector():getWinSize()
 local _scheduler = CCDirector:sharedDirector():getScheduler()
+local textureCache = CCTextureCache:sharedTextureCache()
 local notificationCenter = CCNotificationCenter:sharedNotificationCenter()
 
 local function createGameSceneLayer()
 	local layer = CCLayer:create()
+    local _collision_map = {}
     --运行的障碍物
 	layer._a_collisions = {}
     layer.runerData = {}
     layer._runer = {}
+    _batchNode = CCSpriteBatchNode:createWithTexture(textureCache:textureForKey("res/texture/collisions.png"))
+    _batchNode:setPosition(ccp(0,0))
+    layer:addChild(_batchNode)
+    function _batchNode:move()
+        self:setPositionX(self:getPositionX() - CollisionDef.ACCELERATION_VALUE.ACCELERATION_3)
+    end
+    --layer._batchNode:setPosition(ccp(0,0))
     function layer:init()
         --根据级别生成物体地图
-        local collision_map = CollisionMap:createWithLevel("level1")
-        --for i,v in ipairs(collision_map.tiles) do
-        --pairs不会加载nil的value，ipairs全部遍历效率没有pairs高
-        for i,v in pairs(collision_map.tiles) do
+        _collision_map = CollisionMap:createWithLevel("level2")
+        for i,v in pairs(_collision_map.tiles) do
             if 0 ~= v.id then
                 --添加物体
                 local _collision = Collision:create(v.id,v.locX,v.locY)
-                if not _collision then
-                    break
+                if _collision then
+                    _batchNode:addChild(_collision._sprite)
+                    table.insert(self._a_collisions,_collision)
                 end
-                self:addChild(_collision._sprite,
-                    CollisionDef.COLLISION_Z_ORDER.COLLISION_Z_ORDER_1,
-                    CollisionDef.COLLISION_TAG.COLLISION_TAG_1)
-                table.insert(self._a_collisions,_collision)
+                
             end
         end
+
         --生成角色
         self.runerData = RunerLogic:create("runer1")
         self._runer = Runer:create(self.runerData)
@@ -50,15 +57,12 @@ local function createGameSceneLayer()
             RunerDef.RUNER_TAG.RUNER_TAG_1)
     end
 
-    function layer:getCollisions()
-        return self._a_collisions
-    end
     function layer:reset()
-        self:removeAllChildrenWithCleanup(true)
+        --self:removeAllChildrenWithCleanup(true)
+        self._batchNode:removeAllChildrenWithCleanup(true)
         self._a_collisions = {}
         self._runer = {}
         self:init()
-        print("zhoufei")
     end
     --场景内容更新
     function layer:update(dt)
@@ -71,24 +75,23 @@ local function createGameSceneLayer()
         if #self._a_collisions <= 0 then
             return
         end
+        _batchNode:move()
         for i,v in pairs(self._a_collisions) do
-            if nil ~= v then
+            if v then
                 local collision = v
-                collision:move()
-            end
-        end
-        --删除障碍物
-        function deleteCollision()
-            for i,v in pairs(self._a_collisions) do
-                if v then
-                    if not v._activity then
-                        self:removeChild(v._sprite,true)
-                        table.remove(self._a_collisions,i)
-                    end
+                
+                if _batchNode:getPositionX()+collision._sprite:getPositionX() <= -collision._sprite:getContentSize().width then
+                    print(collision._sprite:getPositionX())
+                    collision._activity = false
+                end
+                --删除障碍物
+                if not collision._activity then
+                    _batchNode:removeChild(collision._sprite,true)
+                    table.remove(self._a_collisions,i)
                 end
             end
         end
-        deleteCollision()
+        
     end
 
     function layer:updateRuner(dt)
@@ -116,7 +119,7 @@ local function createGameSceneLayer()
             --print(collisionRect:getMaxY())
             local isCollision = RunerDef.RUNER_COLLISION_AREA.AREA_NONE
             local collisionRect = v._sprite:boundingBox()
-            local ground = CCRectMake(collisionRect:getMinX(),collisionRect:getMaxY()-70,collisionRect:getMaxX()-collisionRect:getMinX(),40)
+            local ground = CCRectMake(collisionRect:getMinX(),collisionRect:getMaxY()-90,collisionRect:getMaxX()-collisionRect:getMinX(),50)
             if ground:intersectsRect(foot) then
                 isCollision = RunerDef.RUNER_COLLISION_AREA.AREA_FOOT
             elseif collisionRect:intersectsRect(head) then
@@ -126,19 +129,23 @@ local function createGameSceneLayer()
             elseif collisionRect:intersectsRect(right) then
                 isCollision = RunerDef.RUNER_COLLISION_AREA.AREA_RIGHT
             end
+            self.runerData._ground = 0
             --不可穿透
-            if runerData._type == CollisionDef.COLLISION_TYPE.COLLISION_GROUND and 
-                isCollision == RunerDef.RUNER_COLLISION_AREA.AREA_FOOT then
-                runerData._loc.y = runerRect:getMinY()-40
-                runerData:changeStatus(RunerDef.RUNER_STATUS.STATUS_NORMAL)
+            if v._type == CollisionDef.COLLISION_TYPE.COLLISION_GROUND and 
+                isCollision == RunerDef.RUNER_COLLISION_AREA.AREA_FOOT and 
+                (RunerDef.RUNER_STATUS.STATUS_DROP_DOWN == self.runerData:getStatus() or
+                  RunerDef.RUNER_STATUS.STATUS_NORMAL == self.runerData:getStatus()) then
+                self.runerData._ground = runerRect:getMinY()-50
+                self.runerData:changeStatus(RunerDef.RUNER_STATUS.STATUS_NORMAL)
                 return
             end
             --可穿透可使用
-            if runerData._type == CollisionDef.COLLISION_TYPE.COLLISION_GOLD and 
+            if v._type == CollisionDef.COLLISION_TYPE.COLLISION_GOLD and 
                 isCollision ~= RunerDef.RUNER_COLLISION_AREA.AREA_NONE then
-                runerData._activity = false
+                v._activity = false
                 return
             end
+
         end
     end
     function layer:onTouchBegan(x, y)
@@ -177,7 +184,7 @@ local function createGameSceneLayer()
         elseif "SQUAT" == obj then
         end
     end
-    
+
     layer:init()
     
     notificationCenter:registerScriptObserver(layer, responseForUI, "RESET")
@@ -187,7 +194,6 @@ local function createGameSceneLayer()
     layer:registerScriptTouchHandler(layer.onTouch,false, 0 - BaseSceneDef.LAYER_TYPE.LAYER_TYPE_SCENE,true)
     layer:setTouchEnabled(true)
 
-    
     return layer
 end
 

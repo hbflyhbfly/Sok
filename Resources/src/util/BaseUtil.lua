@@ -1,15 +1,13 @@
+require "src/constdef/GlobalDef"
 local base_util = {}
 
 --判断表是否为空
-function base_util.tableIsEmpty(self, t)
+function base_util:tableIsEmpty(t)
     return _G.next(t) == nil
 end
 
-function base_util.test(self)
-    print("dddddfdfin")
-end
 --生成枚举
-function base_util.creatEnumTable(self, tbl)
+function base_util:creatEnumTable(tbl)
     --assert(IsTable(tbl)) 
     local enum_tbl = {} 
     local enum_index = 0 
@@ -21,7 +19,7 @@ function base_util.creatEnumTable(self, tbl)
 end 
 
 --生成常量表功能
-function base_util.tableReadOnly(self,const_table)
+function base_util:tableReadOnly(const_table)
     function Const(const_table)  
         local mt =  
         {  
@@ -38,6 +36,21 @@ function base_util.tableReadOnly(self,const_table)
     local t = {}  
     setmetatable(t, Const(const_table))  
     return t  
+end
+
+
+--获取动画文件名
+function base_util:getAniFileName(ani_id, action_id, ani_type, ani_part, suffix_name)
+    local file_name = GlobalDef.BASE_SRC_NAME.PRE_ANI
+    file_name = file_name .. "_" .. ani_id
+    file_name = file_name .. "_" .. ani_type
+    if ani_part then
+        file_name = file_name .. "_" .. ani_part
+    end
+
+    file_name = file_name .. suffix_name
+
+    return file_name
 end
 
 --local modename = "BaseUtil"
