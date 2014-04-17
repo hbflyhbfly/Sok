@@ -1,4 +1,5 @@
 require "src/constdef/RunerDef"
+
 local Runer = {}
 Runer.allRunerData = {}
 --人物创建
@@ -28,8 +29,8 @@ function Runer:create(runerData)
             index = 1
         end
         _runer:getBone(runerData._boneName):changeDisplayWithIndex(index, ture)
-    end 
-    
+    end
+
     function _runer:update(runerData)
         if runerData._action ~= action then
             

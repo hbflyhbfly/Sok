@@ -4,6 +4,14 @@ require "src/logic/DataCenter"
 UIBase = require "src/ui/UIBase"
 local notificationCenter = CCNotificationCenter:sharedNotificationCenter()
 local log = require "src/util/log"
+
+local platform = CCApplication:sharedApplication():getTargetPlatform()
+if GlobalDef.TARGET_PLATFORM.kTargetAndroid == platform or 
+	GlobalDef.TARGET_PLATFORM.kTargetIphone == platform or
+	GlobalDef.TARGET_PLATFORM.kTargetIpad == platform then
+    luaj = require "src/util/luaj" 
+end
+
 --继承IDataObserver接口
 ViewGameScene = IDataObserver:new()
 ViewGameScene = UIBase.new(ViewGameScene)
@@ -11,6 +19,9 @@ ViewGameScene = UIBase.new(ViewGameScene)
 OpertaionLayer = OpertaionLayer or {}
 ccb["OpertaionLayer"] = OpertaionLayer
 
+function ViewGameScene.callback(event)
+	log.Info("i am callback  " .. event)
+end
 function ViewGameScene.onJumpClick()
 	notificationCenter:postNotification("JUMP",CCArmature:create())
 	--log.Info("this onJumpClick method")
@@ -22,8 +33,32 @@ function ViewGameScene.onPauseClick()
 end
 
 function ViewGameScene.onSquatClick()
-	notificationCenter:postNotification("SQUAT",CCArmature:create())
-	--log.Info("this onJumpClick3 method")
+	--notificationCenter:postNotification("SQUAT",CCArmature:create())
+	log.Info("this onJumpClick3 method")
+	--just for test
+	local args = nil
+	local class_name = nil
+	local function_name = nil
+	if GlobalDef.TARGET_PLATFORM.kTargetAndroid == platform then
+		args = 
+        {
+            20,
+            ViewGameScene.callback
+        }
+        class_name = "com/jingyun/sok/LuaToJavaText"
+        function_name = "test"
+	elseif GlobalDef.TARGET_PLATFORM.kTargetIphone == platform or
+		GlobalDef.TARGET_PLATFORM.kTargetIpad == platform then
+		args = 
+        {
+            name = 20,
+            listener = ViewGameScene.callback
+        }
+        class_name = "PayTest"
+        function_name = "payForCoins"
+    end
+    
+    luaj.callStaticMethod(class_name, function_name, args)
 end
 
 OpertaionLayer["btn_jump"] = ViewGameScene.onJumpClick

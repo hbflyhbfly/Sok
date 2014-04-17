@@ -8,14 +8,14 @@ local ItemPool = {}
 
 	function ItemPool:Close()
 		
-		for k,v in pairs(ItemPool._vecItemPool[itemkey]) do
-            ItemPool._vecItemPool[itemkey] = nil
+		for k,v in pairs(ItemPool._vecItemPool) do
+            ItemPool._vecItemPool[v] = nil
         end
 
 	end
 
 	function ItemPool:GetCount()
-		return #ItemPool._vecItemPool[itemkey]
+		return #ItemPool._vecItemPool
 	end
 
 	function ItemPool:GetIndex(itemIndex)
@@ -23,10 +23,15 @@ local ItemPool = {}
 			return nil
 		end
 
-		for k,v in ipairs(ItemPool._vecItemPool[itemkey]) do
-			local item = v
-			if item._itemIndex == itemIndex then
-				return item
+		-- for k,v in ipairs(ItemPool._vecItemPool) do
+		-- 	local pairs = v
+		-- 	if item._itemIndex == itemIndex then
+		-- 		return item
+		-- 	end
+		-- end
+		for i=1,#ItemPool._vecItemPool do
+			if itemIndex == ItemPool._vecItemPool[i]._itemIndex then 
+				return ItemPool._vecItemPool[i]
 			end
 		end
 
@@ -38,10 +43,15 @@ local ItemPool = {}
 			return nil
 		end
 
-		for k,v in pairs(ItemPool._vecItemPool[itemkey]) do
-			local  item = v
-			if item ~= nil and item._itemName == itemname then 
-				return item
+		-- for k,v in pairs(ItemPool._vecItemPool) do
+		-- 	local  item = v
+		-- 	if item ~= nil and item._itemName == itemname then 
+		-- 		return item
+		-- 	end
+		-- end
+		for i=1,#ItemPool._vecItemPool do
+			if itemname == ItemPool._vecItemPool[i]._itemName then 
+				return ItemPool._vecItemPool[i]
 			end
 		end
 
@@ -50,10 +60,15 @@ local ItemPool = {}
 
 	function ItemPool:GetItemByID(itemID)
 
-		for k,v in pairs(ItemPool._vecItemPool[itemkey]) do
-			local  item = v
-			if item ~= nil and item._itemID == itemID  then
-				return item
+		-- for k,v in pairs(ItemPool._vecItemPool) do
+		-- 	local  item = v
+		-- 	if item ~= nil and item._itemID == itemID  then
+		-- 		return item
+		-- 	end
+		-- end
+		for i=1,#ItemPool._vecItemPool do
+			if itemID == ItemPool._vecItemPool[i]._itemID then 
+				return ItemPool._vecItemPool[i]
 			end
 		end
 
@@ -61,21 +76,32 @@ local ItemPool = {}
 
 	function ItemPool:AddItem(item)
 		if item ~= nil then
-			table.insert(ItemPool._vecItemPool[itemkey], item)
+			table.insert(ItemPool._vecItemPool, item)
 		end
 	end
 
 	function ItemPool:DelItem(itemName)
-		for k,v in pairs(ItemPool._vecItemPool[itemkey]) do
-			local  item = v
-			if item ~= nil and itemname == item._itemName then
-				table.remove(ItemPool._vecItemPool[itemkey], item)
+
+		for i=1,#ItemPool._vecItemPool do
+			if itemName == ItemPool._vecItemPool[i]._itemName then 
+				table.remove(ItemPool._vecItemPool,i)
 			end
 		end
+		-- for k,v in pairs(ItemPool._vecItemPool) do
+		-- 	local  item = v
+		-- 	if itemName == v._itemName then
+		-- 		table.remove(ItemPool._vecItemPool,v)
+		-- 	end
+		-- end
 	end
 
 	function ItemPool:GetStream(filename)
-		ItemPool._vecItemPool = FileManager:readJsonFileToTable(filename)
+		local vecItemPool = FileManager:readJsonFileToTable(filename)
+        local vecItemPools = vecItemPool[itemkey]
+		for k,v in pairs(vecItemPools) do
+			local item = v
+			ItemPool:AddItem(item)			--读到内存
+		end
 	end
 
 return ItemPool

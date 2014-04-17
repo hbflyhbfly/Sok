@@ -37,7 +37,8 @@ function RunerLogic:create( name )
     _runer._frame_star = createdRuner.frame_star
     _runer._frame_num = createdRuner.frame_num
     _runer._boneName = createdRuner.boneName
-    function _runer:run()
+
+    function _runer:update()
     	if RunerDef.RUNER_STATUS.STATUS_NORMAL == self._status then
             self:normalLogic()
     	elseif RunerDef.RUNER_STATUS.STATUS_JUMP_UP == self._status then
@@ -48,7 +49,7 @@ function RunerLogic:create( name )
     		
     	end
     end
-    
+    --跳跃
     function _runer:jumpLogic()
         self._loc._y = self._loc._y + self._velocity
     	self._velocity = self._velocity + RunerDef.ACCELERATION_VALUE.ACCELERATION_G
@@ -56,7 +57,7 @@ function RunerLogic:create( name )
             self:changeStatus(RunerDef.RUNER_STATUS.STATUS_DROP_DOWN)
         end
     end
-
+    --自由落体
     function _runer:dropLogic()
         self._loc._y = self._loc._y + self._velocity
         self._velocity = self._velocity + RunerDef.ACCELERATION_VALUE.ACCELERATION_G
@@ -64,11 +65,11 @@ function RunerLogic:create( name )
             self:changeStatus(RunerDef.RUNER_STATUS.STATUS_NORMAL)
         end
     end
-
+    --蹲下
     function _runer:squatLogic()
         
     end
-
+    --跑动
     function _runer:normalLogic()
         self._loc._y = self._loc._y + self._velocity
         self._velocity = self._velocity + RunerDef.ACCELERATION_VALUE.ACCELERATION_G
@@ -76,7 +77,7 @@ function RunerLogic:create( name )
         	self._loc._y = self._ground
         end
     end
-
+    --人物移动状态
     function _runer:changeStatus(status)
     	if RunerDef.RUNER_STATUS.STATUS_NORMAL == status then
             self._velocity = 0
@@ -89,9 +90,9 @@ function RunerLogic:create( name )
     	end
     	self._status = status
     end
+    --取得人物状态
     function _runer:getStatus()
         return self._status
-        -- body
     end
 	return _runer
 end

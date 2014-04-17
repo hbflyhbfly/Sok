@@ -2,6 +2,26 @@
 #define __APP_DELEGATE_H__
 
 #include "cocos2d.h"
+#include "cocos2d.h"
+#include "CCEGLView.h"
+#include "CCLuaEngine.h"
+#include "SimpleAudioEngine.h"
+#include "Lua_extensions_CCB.h"
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS || CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID || CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
+#include "Lua_web_socket.h"
+#endif
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+#include "CCLuaJavaBridge.h"
+#endif
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+#include "CCLuaObjcBridge.h"
+#endif
+
+using namespace CocosDenshion;
+
+USING_NS_CC;
 
 /**
 @brief    The cocos2d Application.
@@ -32,6 +52,8 @@ public:
     @param  the pointer of the application
     */
     virtual void applicationWillEnterForeground();
+private:
+    CCLuaEngine* pEngine;
 };
 
 #endif  // __APP_DELEGATE_H__

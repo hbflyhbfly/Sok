@@ -1,6 +1,7 @@
 require "src/scene/GameScene"
 local log = require "src/util/log"
 local GameScene = require "src/scene/GameScene"
+require "src/constdef/GlobalDef"
 -- for CCLuaEngine traceback
 function __G__TRACKBACK__(msg)
     print("----------------------------------------")

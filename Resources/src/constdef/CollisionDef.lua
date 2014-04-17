@@ -7,19 +7,28 @@ M.COLLISION_TYPE =
 
     COLLISION_GROUND = 1,
    	COLLISION_GOLD = 2,
-    COLLISION_3 = 3,
+    COLLISION_3 = 3
 }
 
 -------------------------------------ENUM END-----------------------------------
+--运动速度
 M.ACCELERATION_VALUE = 
 {  
-    ACCELERATION_1 = 300,  
-    ACCELERATION_2 = 50,
+    ACCELERATION_1 = 500,  
+    ACCELERATION_2 = 30,
     ACCELERATION_3 = 5
 }  
 
+--状态
+M.COLLISION_STATUS = 
+{
+    COLLISION_ACTIVITY = 1,
+    COLLISION_DESTORY = 2,
+    COLLISION_DEAD = 0
+}
 
 -------------------------------------CONST START-----------------------------------
+
 M.COLLISION_TAG = 
 {
     COLLISION_TAG_1 = 1

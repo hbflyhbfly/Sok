@@ -5,8 +5,8 @@
                  0, 0, 0, 0, 0, 0, 0, 0, 1, 0,
                  0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                  0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                 0, 0, 0, 0, 0, 0, 0, 0, 2, 2,
-                 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+                 0, 0, 0, 0, 0, 0, 0, 0, 2, 0,
+                 0, 0, 0, 0, 0, 2, 2, 2, 2, 0],
          "height":4,
          "name":"tiled",
          "opacity":1,
@@ -16,29 +16,9 @@
          "x":0,
          "y":0
         }],
- "orientation":"orthogonal",
- "properties":
-    {
-
-    },
  "tileheight":120,
- "tilesets":[
-        {
-         "firstgid":1,
-         "image":"collisions.png",
-         "imageheight":256,
-         "imagewidth":256,
-         "margin":1,
-         "name":"collisions",
-         "properties":
-            {
-
-            },
-         "spacing":0,
-         "tileheight":70,
-         "tilewidth":70
-        }],
  "tilewidth":120,
  "version":1,
- "width":10
+ "width":10,
+ "velocity":5
 }

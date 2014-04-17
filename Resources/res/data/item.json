@@ -2,21 +2,23 @@
         "item":[
         {
          "_itemID":1121,
-         "_itemName":"jingyuntianxia",
-         "_itemDesc":"jingyuntianxiajingyuntianxia",
-         "_itemCoin":2000,
-         "_itemIndex":1,
+         "_itemName":"九阳神功",
+         "_itemDesc":"一本遗失的秘籍",
+         "_currencyType":"CURRENCY_GAME_TYPE",
+         "_itemEffect":"九阳神功frameAnimation",
          "_itemPrice":200,
-         "_itemLevelLimit":2090
+         "_itemMaxUseTimes":2,
+         "_itemStackLimit":2
          },
          {
          "_itemID":111,
-         "_itemName":"jingyun_tianxia",
-         "_itemDesc":"jingyuntianxiajdfdingyuntianxia",
-         "_itemCoin":23000,
-         "_itemIndex":14,
-         "_itemPrice":26700,
-         "_itemLevelLimit":20890
+         "_itemName":"乾坤大挪移",
+         "_itemDesc":"一本遗失的秘籍",
+         "_currencyType":"CURRENCY_YUAN_TYPE",
+         "_itemEffect":"一本遗失的秘籍frameAnimation",
+         "_itemPrice":100,
+         "_itemMaxUseTimes":2,
+         "_itemStackLimit":3
         }
                 ]
 }

@@ -31,17 +31,20 @@ M.BASE_SRC_NAME =
 
 
 
-
-M.OS_TYPE = 
+M.TARGET_PLATFORM =
 {
-    UNKNOWN = 0,        --未知
-    IOS = 1,
-    ANDROID = 2,
-    WP = 3,
-    SYMBIAN = 4,
-    WINDOWS = 5,        --windows phone
-    OSX = 6,
-    LINUX = 7
+    kTargetWindows = 0,
+    kTargetLinux = 1,
+    kTargetMacOS = 2,
+    kTargetAndroid = 3,
+    kTargetIphone = 4,
+    kTargetIpad = 5,
+    kTargetBlackBerry = 6,
+    kTargetNaCl = 7,
+    kTargetEmscripten = 8,
+    kTargetTizen = 9,
+    kTargetWinRT = 10,
+    kTargetWP8 = 11
 }
 
 M.NETWORK_TYPE = 

@@ -1,13 +1,28 @@
 { 
+ "collision0":{
+         "id":"0",
+         "name":"",
+         "life":"",
+         "icon":"",
+         "type":"",
+         "visible":false,
+         "locX":0,
+         "locY":0,
+         "status":"COLLISION_ACTIVITY",
+        "velocity":5
+
+    },
  "collision1":{
          "id":"1",
          "name":"",
          "life":"",
          "icon":"tile1.png",
          "type":"COLLISION_GOLD",
-         "visible":true,
+         "visible":false,
          "locX":0,
-         "locY":0
+         "locY":0,
+         "status":"COLLISION_ACTIVITY",
+        "velocity":5
     },
  "collision2":{
         "id":"2",
@@ -15,9 +30,11 @@
         "life":"",
         "icon":"tile2.png",
         "type":"COLLISION_GROUND",
-        "visible":true,
+        "visible":false,
         "locX":0,
-        "locY":0
+        "locY":0,
+        "status":"COLLISION_ACTIVITY",
+        "velocity":5
     },
  "collision3":{
         "id":"3",
@@ -25,9 +42,11 @@
         "life":"",
         "icon":"tile3.png",
         "type":"COLLISION_2",
-        "visible":true,
+        "visible":false,
         "locX":0,
-        "locY":0
+        "locY":0,
+        "status":"COLLISION_ACTIVITY",
+        "velocity":5
     },
  "collision4":{
         "id":"4",
@@ -35,9 +54,11 @@
         "life":"",
         "icon":"tile4.png",
         "type":"COLLISION_2",
-        "visible":true,
+        "visible":false,
         "locX":0,
-        "locY":0
+        "locY":0,
+        "status":"COLLISION_ACTIVITY",
+        "velocity":5
     },
  "collision5":{
         "id":"5",
@@ -45,8 +66,10 @@
         "life":"",
         "icon":"tile5.png",
         "type":"COLLISION_2",
-        "visible":true,
+        "visible":false,
         "locX":0,
-        "locY":0
+        "locY":0,
+        "status":"COLLISION_ACTIVITY",
+        "velocity":5
     }
 }
