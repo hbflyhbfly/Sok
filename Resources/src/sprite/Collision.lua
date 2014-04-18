@@ -1,5 +1,4 @@
 
-local log = require "src/util/log"
 require "src/constdef/CollisionDef"
 local Collision = {}
 local cache = CCSpriteFrameCache:sharedSpriteFrameCache()
@@ -14,7 +13,6 @@ function Collision:create( collisionData )
 	--更新物体位置，动画等
 	function _collision:update(collisionData)
 		self:setPositionX(collisionData.locX)
-
 	end
 	return _collision
 end

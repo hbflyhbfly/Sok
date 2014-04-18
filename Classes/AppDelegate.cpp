@@ -74,11 +74,11 @@ void AppDelegate::applicationDidEnterBackground()
 // this function will be called when the app is active again
 void AppDelegate::applicationWillEnterForeground()
 {
-    CCDirector::sharedDirector()->startAnimation();
-
-    SimpleAudioEngine::sharedEngine()->resumeBackgroundMusic();
-    
-    SimpleAudioEngine::sharedEngine()->pauseBackgroundMusic();
+//    CCDirector::sharedDirector()->startAnimation();
+//
+//    SimpleAudioEngine::sharedEngine()->resumeBackgroundMusic();
+//    
+//    SimpleAudioEngine::sharedEngine()->pauseBackgroundMusic();
     //取得暂停前保存的数据
     if (pEngine) {
         std::string path = CCFileUtils::sharedFileUtils()->fullPathForFilename("src/logic/InterruptContinue.lua");

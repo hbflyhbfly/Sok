@@ -47,7 +47,7 @@ local function createGameSceneLayer()
     function layer:reset()
         self:removeAllChildrenWithCleanup(true)
         self._runer = {}
-        self:init()
+        self:initWithLevel("level2")
     end
     --场景内容更新
     function layer:update(dt)

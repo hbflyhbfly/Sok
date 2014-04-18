@@ -1,7 +1,7 @@
 local log = require "src/util/log"
 require "src/ui/ViewGameScene"
 local UIManager = require "src/ui/UIManager"
-
+local LuaWebSocket = require "src/test/LuaWebSocket"
 --这个可以视为类名
 local GameViewLayer = {}
 
@@ -23,6 +23,8 @@ local function createGameViewLayer()
     	view_game_scene = ViewGameScene:create()
         UIManager:AddLayer(game_view_layer,"game_layer",view_game_scene,1000)
         UIManager:RegisterUpdate("game_layer")
+        --网络
+        --local a = LuaWebSocket:send()
     end
 
     function game_view_layer:onTouchBegan(x, y)
