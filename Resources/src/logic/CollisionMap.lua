@@ -3,11 +3,11 @@ local FileManager = require "src/util/FileManager"
 local CollisionPool = require "src/logic/CollisionPool"
 require "src/util/json"
 local LEVELS = {
-	level1 = "level1",
-	level2 = "level2",
-	level3 = "level3",
-	level4 = "level4",
-	level5 = "level5",
+	"level1",
+	"level2",
+	"level3",
+	"level4",
+	"level5",
 }
 local FILE_TYPE = ".json"
 
@@ -48,13 +48,15 @@ local CollisionMap = {}
 					local n = j*collisionMap.width+i+1
 					if 0 ~= tileData[n] then 
 						local temp = cp:getCollision(tileData[n])
-						local tile = {}
-						setmetatable(tile, temp)
-    					temp.__index = temp;
-						if tile.id then tile.id = n end
-						if tile.locX then tile.locX = i * collisionMap.tileWidth end
-						if tile.locY then tile.locY = visible_size.height - (j * collisionMap.tileHeight) end
-						table.insert(collisionMap.tiles,tile)
+						if temp then
+							local tile = {}
+							setmetatable(tile, temp)
+	    					temp.__index = temp;
+							if tile.id then tile.id = n end
+							if tile.locX then tile.locX = i * collisionMap.tileWidth end
+							if tile.locY then tile.locY = visible_size.height - ((j+1) * collisionMap.tileHeight) end
+							table.insert(collisionMap.tiles,tile)
+						end
 					end
 				end
 			end

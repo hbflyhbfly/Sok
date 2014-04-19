@@ -38,7 +38,11 @@ function CollisionPool:new(o)
 	end
 
 	function o:getCollision(id)
-		return self.allCollisionData["collision"..id]
+
+		if self.allCollisionData["collision"..id] then
+			return self.allCollisionData["collision"..id]
+		end
+		return nil
 	end
 	return o
 end

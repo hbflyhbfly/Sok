@@ -25,33 +25,36 @@ local _visible_size = CCDirector:sharedDirector():getVisibleSize()
 local _origin = CCDirector:sharedDirector():getVisibleOrigin()
 local _scheduler = CCDirector:sharedDirector():getScheduler()
 
-local function createGameScene()
+function createGameScene(level)
     --handing touch events
     local touch_begin_point = nil
     --场景初始化
     local function init()
         CCArmatureDataManager:sharedArmatureDataManager():addArmatureFileInfo("res/arm/paokunv.png","res/arm/paokunv.plist","res/arm/paokunv.ExportJson")
-        CCSpriteFrameCache:sharedSpriteFrameCache():addSpriteFramesWithFile("res/texture/Res.plist")
+        CCArmatureDataManager:sharedArmatureDataManager():addArmatureFileInfo("res/arm/ani_1001_bone.png","res/arm/ani_1001_bone.plist","res/arm/ani_1001_bone.ExportJson")
         CCSpriteFrameCache:sharedSpriteFrameCache():addSpriteFramesWithFile("res/texture/collisions.plist")
         CCSpriteFrameCache:sharedSpriteFrameCache():addSpriteFramesWithFile("res/texture/ui_zhedang.plist")
-        CCTextureCache:sharedTextureCache():addImage("res/texture/move_1.png")
-        CCTextureCache:sharedTextureCache():addImage("res/texture/move_2.png")
-        CCTextureCache:sharedTextureCache():addImage("res/texture/collisions.png")
+        CCSpriteFrameCache:sharedSpriteFrameCache():addSpriteFramesWithFile("res/texture/object.plist")
+        CCTextureCache:sharedTextureCache():addImage("res/texture/scene_2_bg_001.png")
+        CCTextureCache:sharedTextureCache():addImage("res/texture/scene_2_bg_002.png")
+        CCTextureCache:sharedTextureCache():addImage("res/texture/scene_2_bg_003.png")
+        CCTextureCache:sharedTextureCache():addImage("res/texture/scene_2_bg_004.png")
+        CCTextureCache:sharedTextureCache():addImage("res/texture/scene_2_bg_005.png")
+        CCTextureCache:sharedTextureCache():addImage("res/texture/scene_2_bg_006.png")
+        CCTextureCache:sharedTextureCache():addImage("res/texture/scene_2_bg_007.png")
 
         GameScene._background_layer = BackGroundLayer:create()
-        GameScene._game_scene_layer = GameSceneLayer:create()
+        GameScene._game_scene_layer = GameSceneLayer:create(3)
         GameScene._game_view_layer = GameViewLayer:create()
     end
 
     function GameScene._game_layer:onTouchBegan(x, y)
 		log.Debugf("GameScene onTouchBegan: %0.2f, %0.2f",x,y);
         touch_begin_point = {x = x, y = y}
-
         -- if runer:getRunerStatu() ~= Runer.ENUM_RUNER_STATUS.STATUS_JUMP_UP and
         --     runer:getRunerStatu() ~= Runer.ENUM_RUNER_STATUS.STATUS_JUMP_DOWN then
         --     runer:changeRunerStatu(Runer.ENUM_RUNER_STATUS.STATUS_JUMP_UP)    
         -- end
-
         return true
     end
 
@@ -122,7 +125,7 @@ local function createGameScene()
 end
 
 GameScene.create = function(self) 
-    local o = createGameScene() 
+    local o = createGameScene()
     return o; 
 end
 

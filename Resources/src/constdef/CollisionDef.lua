@@ -7,7 +7,8 @@ M.COLLISION_TYPE =
 
     COLLISION_GROUND = 1,
    	COLLISION_GOLD = 2,
-    COLLISION_3 = 3
+    COLLISION_SNARE = 3,
+    COLLISION_NOWAY = 4
 }
 
 -------------------------------------ENUM END-----------------------------------
@@ -15,7 +16,7 @@ M.COLLISION_TYPE =
 M.ACCELERATION_VALUE = 
 {  
     ACCELERATION_1 = 500,  
-    ACCELERATION_2 = 30,
+    ACCELERATION_2 = 10,
     ACCELERATION_3 = 5
 }  
 

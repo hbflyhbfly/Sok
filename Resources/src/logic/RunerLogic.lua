@@ -33,6 +33,7 @@ function RunerLogic:create( name )
 	_runer._velocity = 0
 	_runer._ground = 0
 	_runer._action = createdRuner.action
+    _runer._nextAction = createdRuner.action
     _runer._icon = createdRuner.icon
     _runer._frame_star = createdRuner.frame_star
     _runer._frame_num = createdRuner.frame_num
@@ -65,10 +66,6 @@ function RunerLogic:create( name )
             self:changeStatus(RunerDef.RUNER_STATUS.STATUS_NORMAL)
         end
     end
-    --蹲下
-    function _runer:squatLogic()
-        
-    end
     --跑动
     function _runer:normalLogic()
         self._loc._y = self._loc._y + self._velocity
@@ -81,12 +78,12 @@ function RunerLogic:create( name )
     function _runer:changeStatus(status)
     	if RunerDef.RUNER_STATUS.STATUS_NORMAL == status then
             self._velocity = 0
+            self._nextAction = RunerDef.ACTION_TYPE.RUN1
         elseif RunerDef.RUNER_STATUS.STATUS_DROP_DOWN == status then
 
     	elseif RunerDef.RUNER_STATUS.STATUS_JUMP_UP == status then
             self._velocity = RunerDef.ACCELERATION_VALUE.ACCELERATION_UP
-    	elseif RunerDef.RUNER_STATUS._STATUS_SQUAT == status then
-    		
+            self._nextAction = RunerDef.ACTION_TYPE.JUMP1
     	end
     	self._status = status
     end

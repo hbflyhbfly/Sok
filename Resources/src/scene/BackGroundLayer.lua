@@ -7,15 +7,13 @@ local _base_util = require "src/util/BaseUtil.lua"
 local _texture_cache = CCTextureCache:sharedTextureCache()
 local _visible_size = CCDirector:sharedDirector():getWinSize()
 
---常量
-local CONST_SPEED = _base_util:tableReadOnly(BaseSceneDef.SPEED_TABLE)
-
 local function createBackgroundLayer()
 	local background_layer = CCLayer:create()
      
     local function updatebackGround(node)
-    	if node:getPositionX() <= -_visible_size.width then
-    		node:setPositionX(_visible_size.width)
+        local bg_object_size = node:boundingBox().size;
+    	if node:getPositionX() <= -bg_object_size.width then
+    		node:setPositionX(bg_object_size.width)
     	end
     end
 
@@ -33,7 +31,7 @@ local function createBackgroundLayer()
     		end
 			local bg_object_size = bg_obj:boundingBox().size;
 			bg_obj:setAnchorPoint(ccp(0,0))
-			bg_obj:setPosition(ccp(_visible_size.width * i,offset_y))
+			bg_obj:setPosition(ccp(bg_object_size.width * i,offset_y))
 			local actions = CCArray:create()
     		actions:addObject(CCMoveBy:create(1, ccp(-speed , 0)))
     		actions:addObject(CCCallFuncN:create(updatebackGround))
@@ -43,9 +41,11 @@ local function createBackgroundLayer()
     end
 
     local function initContent( )
-        createbgObject("res/texture/move_1.png","res/texture/move_1.png",0,0)
-        createbgObject("res/texture/move_2.png","res/texture/move_2.png",CONST_SPEED.BACKGROUND_SPEED1,0)
-        
+        createbgObject("res/texture/scene_2_bg_002.png","res/texture/scene_2_bg_002.png",0,0)
+        createbgObject("res/texture/scene_2_bg_001.png","res/texture/scene_2_bg_001.png",BaseSceneDef.SPEED_TABLE.BACKGROUND_SPEED1,0)
+        createbgObject("res/texture/scene_2_bg_007.png","res/texture/scene_2_bg_007.png",BaseSceneDef.SPEED_TABLE.BACKGROUND_SPEED3,_visible_size.height/4)
+        createbgObject("res/texture/scene_2_bg_005.png","res/texture/scene_2_bg_005.png",BaseSceneDef.SPEED_TABLE.BACKGROUND_SPEED4,_visible_size.height/30)
+        createbgObject("res/texture/scene_2_bg_006.png","res/texture/scene_2_bg_006.png",BaseSceneDef.SPEED_TABLE.BACKGROUND_SPEED5,0)
     end
     
     initContent()

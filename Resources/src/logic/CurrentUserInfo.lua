@@ -13,7 +13,7 @@ local CurrentUserInfo = {}
 		function o:addUserInfo()
 			self.userInfo.id = ""
 			self.userInfo.name = ""
-			self.userInfo.currentRole = "runer1"
+			self.userInfo.currentRole = "runer2"
 		end
 		return o
 	end

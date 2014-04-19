@@ -32,9 +32,9 @@ function ViewGameScene.onPauseClick()
 	notificationCenter:postNotification("RESET",CCLayer:create())
 end
 
-function ViewGameScene.onSquatClick()
-	--notificationCenter:postNotification("SQUAT",CCArmature:create())
-	log.Info("this onJumpClick3 method")
+function ViewGameScene.onAttackClick()
+	notificationCenter:postNotification("ATTACK",CCArmature:create())
+	--log.Info("this onJumpClick3 method")
 	--just for test
 	local args = nil
 	local class_name = nil
@@ -63,7 +63,7 @@ end
 
 OpertaionLayer["btn_jump"] = ViewGameScene.onJumpClick
 OpertaionLayer["btn_pause"] = ViewGameScene.onPauseClick
-OpertaionLayer["btn_squat"] = ViewGameScene.onSquatClick
+OpertaionLayer["btn_squat"] = ViewGameScene.onAttackClick
 
 local function HelloCCBTestMainLayer()
 	log.Info("this is motherfucker")

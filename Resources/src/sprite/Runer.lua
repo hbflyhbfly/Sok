@@ -15,12 +15,13 @@ function Runer:create(runerData)
     function _runer:runAnimation(action)
         -- 动画
         self:getAnimation():play(action)
-        self._action = action
+        runerData._action = action
     end
     _runer:runAnimation(runerData._action)
-    _runer._action = RunerDef.ACTION_TYPE[runerData._action]
     _runer:setAnchorPoint(ccp(0,0))
-	_runer:initSkin(_runer,runerData._frame_star,runerData._frame_num,runerData._boneName)
+    if runerData._frame_star then
+        _runer:initSkin(_runer,runerData._frame_star,runerData._frame_num,runerData._boneName)
+	end
 
     local index = 1
     function _runer:changeHeadFrame(runerData)
@@ -32,11 +33,12 @@ function Runer:create(runerData)
     end
 
     function _runer:update(runerData)
-        if runerData._action ~= action then
-            
+        if runerData._frame_star then
+            self:changeHeadFrame(runerData)
         end
-        
-        self:changeHeadFrame(runerData)
+        if runerData._action ~= runerData._nextAction then
+            self:runAnimation(runerData._nextAction)
+        end
         self:setPosition(ccp(runerData._loc._x,runerData._loc._y))
     end
     

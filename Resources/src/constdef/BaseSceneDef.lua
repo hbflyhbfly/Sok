@@ -15,7 +15,9 @@ M.SPEED_TABLE =
     {  
         BACKGROUND_SPEED1 = 5,  
         BACKGROUND_SPEED2 = 10,
-        BACKGROUND_SPEED3 = 15
+        BACKGROUND_SPEED3 = 15,
+        BACKGROUND_SPEED4 = 40,
+        BACKGROUND_SPEED5 = 45
     }  
 
 

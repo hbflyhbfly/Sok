@@ -11,9 +11,9 @@
          "x":0,
          "y":0
         }],
- "tileheight":40,
- "tilewidth":40,
+ "tileheight":32,
+ "tilewidth":32,
  "version":1,
  "width":265,
- "velocity":5
+ "velocity":20
 }

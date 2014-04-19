@@ -14,21 +14,21 @@
     },
  "collision1":{
          "id":"1",
-         "name":"",
+         "name":"land",
          "life":"",
-         "icon":"tile1.png",
-         "type":"COLLISION_GOLD",
+         "icon":"object_002.png",
+         "type":"COLLISION_GROUND",
          "visible":false,
          "locX":0,
          "locY":0,
          "status":"COLLISION_ACTIVITY",
         "velocity":5
     },
- "collision2":{
-        "id":"2",
-        "name":"",
+ "collision7":{
+        "id":"7",
+        "name":"land2",
         "life":"",
-        "icon":"tile2.png",
+        "icon":"object_003.png",
         "type":"COLLISION_GROUND",
         "visible":false,
         "locX":0,
@@ -36,40 +36,53 @@
         "status":"COLLISION_ACTIVITY",
         "velocity":5
     },
- "collision3":{
-        "id":"3",
-        "name":"",
+ "collision57":{
+        "id":"57",
+        "name":"jian",
         "life":"",
-        "icon":"tile3.png",
-        "type":"COLLISION_2",
+        "icon":"object_004.png",
+        "type":"COLLISION_NOWAY",
         "visible":false,
         "locX":0,
         "locY":0,
         "status":"COLLISION_ACTIVITY",
         "velocity":5
     },
- "collision4":{
-        "id":"4",
-        "name":"",
+ "collision60":{
+        "id":"60",
+        "name":"Shibei",
         "life":"",
-        "icon":"tile4.png",
-        "type":"COLLISION_2",
+        "icon":"object_001.png",
+        "type":"COLLISION_NOWAY",
         "visible":false,
         "locX":0,
         "locY":0,
         "status":"COLLISION_ACTIVITY",
         "velocity":5
     },
- "collision5":{
-        "id":"5",
-        "name":"",
+ "collision62":{
+        "id":"62",
+        "name":"Dici",
         "life":"",
-        "icon":"tile5.png",
-        "type":"COLLISION_2",
+        "icon":"object_005.png",
+        "type":"COLLISION_SNARE",
+        "visible":false,
+        "locX":0,
+        "locY":0,
+        "status":"COLLISION_ACTIVITY",
+        "velocity":5
+    },
+    "collision90":{
+        "id":"90",
+        "name":"Dici2",
+        "life":"",
+        "icon":"object_006.png",
+        "type":"COLLISION_SNARE",
         "visible":false,
         "locX":0,
         "locY":0,
         "status":"COLLISION_ACTIVITY",
         "velocity":5
     }
+
 }

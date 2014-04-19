@@ -10,8 +10,21 @@
          "locX":200,
          "locY":350,
          "boneName":"head",
-         "action":"RUN",
+         "action":"RUN1",
          "frame_star":"res/arm/loading_0",
          "frame_num":12
+        },
+"runer2":{
+         "id":"2",
+         "name":"wanqing",
+         "life":"",
+         "status":"STATUS_NORMAL",
+         "icon":"jiannv",
+         "type":"",
+         "visible":true,
+         "locX":500,
+         "locY":500,
+         "action":"4"
         }
+
 }

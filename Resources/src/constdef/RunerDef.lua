@@ -24,13 +24,19 @@ M.RUNER_COLLISION_AREA =
 M.ACTION_TYPE = 
 {
 
-    STAND = 1,                          --站立
-    JUMP = 4,                           --跳跃
-    FLY = 8,                            --飞行
-    ATTACK = 16,                        --攻击
-    MOUNT = 32,                         --坐骑
-    RUN = 64,
-    SPECIAL_EFFECT1 = 128,               --可能是降龙十八掌等特效动画
+    STAND = 0,                          --站立
+    ONWATER = 1,                        --水上漂
+    JUMP1 = 2,                          --跳跃1
+    JUMP2 = 3,                          --跳跃2
+    RUN1 = 4,                           --跑动1
+    RUN2 = 5,                           --跑动2
+    ATTACK = 6,                         --攻击
+    TODEAD = 7,                         --必杀
+    ONGRASS1 = 8,                       --草上飞1
+    ONGRASS2 = 9,                       --草上飞2
+    FLY = 10,                           --梯云纵
+    MOUNT = 11,                         --坐骑
+    SPECIAL_EFFECT1 = 128,              --可能是降龙十八掌等特效动画
     SPECIAL_EFFECT2 = 256
 
 }
@@ -66,7 +72,7 @@ M.RUNER_TAG =
 
 M.RUNER_Z_ORDER = 
 {
-    RUNER_Z_ORDER_1 = 1
+    RUNER_Z_ORDER_1 = 100
 }
 -------------------------------------CONST END-----------------------------------
 
