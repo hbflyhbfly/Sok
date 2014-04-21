@@ -4,44 +4,23 @@ local Runer = {}
 Runer.allRunerData = {}
 --人物创建
 function Runer:create(runerData)
-	_runer = CCArmature:create(runerData._icon) 
-    function _runer:initSkin(armture_ , skinName, skinArrayNum , boneName)
-        for i = 1,skinArrayNum  do
-            local skinName = skinName..i..".png"
-            local skin = CCSkin:create(skinName)
-            armture_:getBone(boneName):addDisplay(skin, i - 1)
-         end   
-    end
+	_runer = CCArmature:create(runerData.icon) 
     function _runer:runAnimation(action)
         -- 动画
         self:getAnimation():play(action)
-        runerData._action = action
+        runerData.action = action
+        local head = self:getBone("head")
+        head:getWorldInfo()
     end
-    _runer:runAnimation(runerData._action)
+    _runer:runAnimation(runerData.action)
     _runer:setAnchorPoint(ccp(0,0))
-    if runerData._frame_star then
-        _runer:initSkin(_runer,runerData._frame_star,runerData._frame_num,runerData._boneName)
-	end
-
-    local index = 1
-    function _runer:changeHeadFrame(runerData)
-        index = index + 1
-        if index > runerData._frame_num - 1 then
-            index = 1
-        end
-        _runer:getBone(runerData._boneName):changeDisplayWithIndex(index, ture)
-    end
-
     function _runer:update(runerData)
-        if runerData._frame_star then
-            self:changeHeadFrame(runerData)
+        if runerData.action ~= runerData.nextAction then
+            self:runAnimation(runerData.nextAction)
         end
-        if runerData._action ~= runerData._nextAction then
-            self:runAnimation(runerData._nextAction)
-        end
-        self:setPosition(ccp(runerData._loc._x,runerData._loc._y))
+        self:setPosition(ccp(runerData.locX,runerData.locY))
+        self:setAnchorPoint(ccp(0,0))
     end
-    
 	return _runer
 end
 

@@ -1,0 +1,116 @@
+{
+    "_mainCheckPoint": [
+        {
+            "_mainCpId": 1000,
+            "_mainCpName": "Mountain",
+            "_mainCpLevel": 1,
+            "_mainCpIsLocked": false,
+            "_mainCpRewardCoin": 30,
+            "_mainCpRewardExp": 200,
+            "_mainCpRewardedId": 1,
+            "_mainCpSubCheckPoints": [
+                {
+                    "_subCpId": 0,
+                    "_subCpName": "California",
+                    "_subCpLevel": 0,
+                    "_subCpIsLocked": false,
+                    "_subCpRewardCoin": 30,
+                    "_subCpRewardExp": 200,
+                    "_subCpRewardedId": 1
+                },
+                {
+                    "_subCpId": 1,
+                    "_subCpName": "NewYork",
+                    "_subCpLevel": 1,
+                    "_subCpIsLocked": true,
+                    "_subCpRewardCoin": 30,
+                    "_subCpRewardExp": 200,
+                    "_subCpRewardedId": 1
+                },
+                {
+                    "_subCpId": 2,
+                    "_subCpName": "ShanXi",
+                    "_subCpLevel": 2,
+                    "_subCpIsLocked": true,
+                    "_subCpRewardCoin": 30,
+                    "_subCpRewardExp": 200,
+                    "_subCpRewardedId": 1
+                }
+            ]
+        },
+        {"_mainCpId": 1001,
+            "_mainCpName": "Sea",
+            "_mainCpLevel": 2,
+            "_mainCpIsLocked": true,
+            "_mainCpRewardCoin": 30,
+            "_mainCpRewardExp": 200,
+            "_mainCpRewardedId": 1,
+            "_mainCpSubCheckPoints": [
+                {
+                    "_subCpId": 0,
+                    "_subCpName": "HeiLongJiang",
+                    "_subCpLevel": 0,
+                    "_subCpIsLocked": true,
+                    "_subCpRewardCoin": 30,
+                    "_subCpRewardExp": 200,
+                    "_subCpRewardedId": 1
+                },
+                {
+                    "_subCpId": 1,
+                    "_subCpName": "JiLin",
+                    "_subCpLevel": 1,
+                    "_subCpIsLocked": true,
+                    "_subCpRewardCoin": 30,
+                    "_subCpRewardExp": 200,
+                    "_subCpRewardedId": 1
+                },
+                {
+                    "_subCpId": 2,
+                    "_subCpName": "LiaoNing",
+                    "_subCpLevel": 2,
+                    "_subCpIsLocked": true,
+                    "_subCpRewardCoin": 30,
+                    "_subCpRewardExp": 200,
+                    "_subCpRewardedId": 1
+                }
+            ]
+        },
+        {"_mainCpId": 1002,
+            "_mainCpName": "Sea",
+            "_mainCpLevel": 3,
+            "_mainCpIsLocked": true,
+            "_mainCpRewardCoin": 30,
+            "_mainCpRewardExp": 200,
+            "_mainCpRewardedId": 1,
+            "_mainCpSubCheckPoints": [
+                {
+                    "_subCpId": 0,
+                    "_subCpName": "HeiLongJiang",
+                    "_subCpLevel": 0,
+                    "_subCpIsLocked": true,
+                    "_subCpRewardCoin": 30,
+                    "_subCpRewardExp": 200,
+                    "_subCpRewardedId": 1
+                },
+                {
+                    "_subCpId": 1,
+                    "_subCpName": "JiLin",
+                    "_subCpLevel": 1,
+                    "_subCpIsLocked": true,
+                    "_subCpRewardCoin": 30,
+                    "_subCpRewardExp": 200,
+                    "_subCpRewardedId": 1
+                },
+                {
+                    "_subCpId": 2,
+                    "_subCpName": "LiaoNing",
+                    "_subCpLevel": 2,
+                    "_subCpIsLocked": true,
+                    "_subCpRewardCoin": 30,
+                    "_subCpRewardExp": 200,
+                    "_subCpRewardedId": 1
+                }
+            ]
+        }        
+    ]
+}

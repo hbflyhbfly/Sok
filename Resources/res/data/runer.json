@@ -3,28 +3,33 @@
          "id":"1",
          "name":"",
          "life":"",
-         "status":"STATUS_NORMAL",
+         "status":0,
          "icon":"paokunv",
          "type":"",
          "visible":true,
          "locX":200,
          "locY":350,
-         "boneName":"head",
-         "action":"RUN1",
-         "frame_star":"res/arm/loading_0",
-         "frame_num":12
+         "action":"4",
+         "velocity":5,
+         "velocityY":8,
+         "nextAction":"4",
+         "ground":0
         },
 "runer2":{
          "id":"2",
          "name":"wanqing",
          "life":"",
-         "status":"STATUS_NORMAL",
-         "icon":"jiannv",
+         "status":0,
+         "icon":"ani_1001_bone",
          "type":"",
          "visible":true,
          "locX":500,
-         "locY":500,
-         "action":"4"
+         "locY":600,
+         "action":"4",
+         "velocity":5,
+         "velocityY":8,
+         "nextAction":"4",
+         "ground":0
         }
 
 }

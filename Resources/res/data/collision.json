@@ -62,9 +62,9 @@
     },
  "collision62":{
         "id":"62",
-        "name":"Dici",
+        "name":"Dici2",
         "life":"",
-        "icon":"object_005.png",
+        "icon":"object_006.png",
         "type":"COLLISION_SNARE",
         "visible":false,
         "locX":0,
@@ -74,9 +74,9 @@
     },
     "collision90":{
         "id":"90",
-        "name":"Dici2",
+        "name":"Dici",
         "life":"",
-        "icon":"object_006.png",
+        "icon":"object_005.png",
         "type":"COLLISION_SNARE",
         "visible":false,
         "locX":0,

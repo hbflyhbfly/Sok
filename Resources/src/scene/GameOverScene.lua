@@ -20,7 +20,6 @@ function GamenOverScene:createGameOverScene()
         -- label:setPosition( ccp(10,300) )
 	end
 
-
     _game_layer:init()
     return self._game_scene
 end

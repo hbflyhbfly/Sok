@@ -91,7 +91,6 @@ void AppDelegate::applicationWillEnterForeground()
     CCNode* pNode = pRuningScene->getChildByTag(1);//TODO:模式1
     if (pNode) {
         //弹出暂停界面
-        
     }
     
     pNode = pRuningScene->getChildByTag(2);       //TODO:模式2

@@ -4,10 +4,11 @@ local M = {}
 -- 人物状态
 M.RUNER_STATUS = 
 {  
-    STATUS_DROP_DOWN = 3,
+    
     STATUS_NORMAL = 0, 
     STATUS_JUMP_UP = 1,
     STATUS_CROUCH = 2,
+    STATUS_DROP_DOWN = 3
 }
 -------------------------------------ENUM END-----------------------------------
 

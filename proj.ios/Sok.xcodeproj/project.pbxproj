@@ -211,6 +211,8 @@
 		CD280EC118F65690009AAA96 /* app.icf in Resources */ = {isa = PBXBuildFile; fileRef = CD280EBE18F65690009AAA96 /* app.icf */; };
 		CD280EC818F68EF9009AAA96 /* res in Resources */ = {isa = PBXBuildFile; fileRef = CD280EC618F68EF9009AAA96 /* res */; };
 		CD280EC918F68EF9009AAA96 /* src in Resources */ = {isa = PBXBuildFile; fileRef = CD280EC718F68EF9009AAA96 /* src */; };
+		CD7A483A1904B9070092F17A /* AssetsManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CD7A48381904B9070092F17A /* AssetsManager.cpp */; };
+		CDB01E4E19011EC700FAFAF8 /* CCLuaHttpRequest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDB01E4C19011EC700FAFAF8 /* CCLuaHttpRequest.cpp */; };
 		CDCD10FD18F78A6100545A92 /* extern.lua in Resources */ = {isa = PBXBuildFile; fileRef = CDCD10FC18F78A6100545A92 /* extern.lua */; };
 		ED35C0C718323498002A0750 /* CCArmatureAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED35C03818323497002A0750 /* CCArmatureAnimation.cpp */; };
 		ED35C0C818323498002A0750 /* CCProcessBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED35C03A18323497002A0750 /* CCProcessBase.cpp */; };
@@ -713,6 +715,10 @@
 		CD280EBE18F65690009AAA96 /* app.icf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = app.icf; sourceTree = "<group>"; };
 		CD280EC618F68EF9009AAA96 /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
 		CD280EC718F68EF9009AAA96 /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; path = src; sourceTree = "<group>"; };
+		CD7A48381904B9070092F17A /* AssetsManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AssetsManager.cpp; sourceTree = "<group>"; };
+		CD7A48391904B9070092F17A /* AssetsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetsManager.h; sourceTree = "<group>"; };
+		CDB01E4C19011EC700FAFAF8 /* CCLuaHttpRequest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CCLuaHttpRequest.cpp; path = ../Classes/CCLuaHttpRequest.cpp; sourceTree = "<group>"; };
+		CDB01E4D19011EC700FAFAF8 /* CCLuaHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCLuaHttpRequest.h; path = ../Classes/CCLuaHttpRequest.h; sourceTree = "<group>"; };
 		CDCD10FC18F78A6100545A92 /* extern.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = extern.lua; sourceTree = "<group>"; };
 		ED35C03818323497002A0750 /* CCArmatureAnimation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCArmatureAnimation.cpp; sourceTree = "<group>"; };
 		ED35C03918323497002A0750 /* CCArmatureAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCArmatureAnimation.h; sourceTree = "<group>"; };
@@ -874,6 +880,7 @@
 		15C153791683112E00D239F2 /* extensions */ = {
 			isa = PBXGroup;
 			children = (
+				CD7A48371904B9070092F17A /* AssetsManager */,
 				ED35C02A18323496002A0750 /* CocoStudio */,
 				15C1537B1683112E00D239F2 /* CCBReader */,
 				15C153B01683112E00D239F2 /* cocos-ext.h */,
@@ -1736,6 +1743,15 @@
 			path = script;
 			sourceTree = "<group>";
 		};
+		CD7A48371904B9070092F17A /* AssetsManager */ = {
+			isa = PBXGroup;
+			children = (
+				CD7A48381904B9070092F17A /* AssetsManager.cpp */,
+				CD7A48391904B9070092F17A /* AssetsManager.h */,
+			);
+			path = AssetsManager;
+			sourceTree = "<group>";
+		};
 		ED35C02A18323496002A0750 /* CocoStudio */ = {
 			isa = PBXGroup;
 			children = (
@@ -2017,6 +2033,8 @@
 		F293BB7C15EB830F00256477 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CDB01E4C19011EC700FAFAF8 /* CCLuaHttpRequest.cpp */,
+				CDB01E4D19011EC700FAFAF8 /* CCLuaHttpRequest.h */,
 				F293BB7E15EB831F00256477 /* AppDelegate.cpp */,
 				F293BB7F15EB831F00256477 /* AppDelegate.h */,
 			);
@@ -2142,6 +2160,7 @@
 				F293BB9C15EB831F00256477 /* AppDelegate.cpp in Sources */,
 				15C153F71683112E00D239F2 /* CCBAnimationManager.cpp in Sources */,
 				150CD3951872B593007F1964 /* UITouchGroup.cpp in Sources */,
+				CD7A483A1904B9070092F17A /* AssetsManager.cpp in Sources */,
 				ED35C0D518323498002A0750 /* CCDataReaderHelper.cpp in Sources */,
 				ED35C0D218323498002A0750 /* CCColliderDetector.cpp in Sources */,
 				15C153F81683112E00D239F2 /* CCBFileLoader.cpp in Sources */,
@@ -2219,6 +2238,7 @@
 				298B2A3418D0671400C1920F /* LayoutReader.cpp in Sources */,
 				15C154921683116B00D239F2 /* cpRatchetJoint.c in Sources */,
 				15C154931683116B00D239F2 /* cpRotaryLimitJoint.c in Sources */,
+				CDB01E4E19011EC700FAFAF8 /* CCLuaHttpRequest.cpp in Sources */,
 				15C154941683116B00D239F2 /* cpSimpleMotor.c in Sources */,
 				298B2A3018D0671400C1920F /* ImageViewReader.cpp in Sources */,
 				15C154951683116B00D239F2 /* cpSlideJoint.c in Sources */,
@@ -2502,6 +2522,7 @@
 				OTHER_LDFLAGS = (
 					"-lxml2",
 					"-lz",
+					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
@@ -2552,6 +2573,7 @@
 				OTHER_LDFLAGS = (
 					"-lxml2",
 					"-lz",
+					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;

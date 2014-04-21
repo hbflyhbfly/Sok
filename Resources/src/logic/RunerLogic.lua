@@ -9,89 +9,66 @@ local RunerLogic = {}
 RunerLogic.allRunerData = {}
 --人物创建
 function RunerLogic:create( name )
-    
-	_runer = ROLE
-
+    local createdRuner = {}
 	self.allRunerData = FileManager:readJsonFileToTable(RUNER_DATA_FILE)
 
 	if nil == self.allRunerData then
 		log:Debug("Runer:create:数据取得失败")
 		return nil
 	end
-	local createdRuner = self.allRunerData[name]
+	createdRuner = self.allRunerData[name]
 
 	if nil == createdRuner then
 		log:Debug("Runer:create:该角色不存在")
 		return nil
 	end
-    _runer._status = RunerDef.RUNER_STATUS[createdRuner.status]
-	_runer._id = createdRuner.id
-	_runer._name = createdRuner.name
-	_runer._type = createdRuner.type
-	_runer._loc._x = createdRuner.locX
-	_runer._loc._y = createdRuner.locY
-	_runer._velocity = 0
-	_runer._ground = 0
-	_runer._action = createdRuner.action
-    _runer._nextAction = createdRuner.action
-    _runer._icon = createdRuner.icon
-    _runer._frame_star = createdRuner.frame_star
-    _runer._frame_num = createdRuner.frame_num
-    _runer._boneName = createdRuner.boneName
 
-    function _runer:update()
-    	if RunerDef.RUNER_STATUS.STATUS_NORMAL == self._status then
-            self:normalLogic()
-    	elseif RunerDef.RUNER_STATUS.STATUS_JUMP_UP == self._status then
+    function createdRuner:update()
+    	if RunerDef.RUNER_STATUS.STATUS_JUMP_UP == createdRuner.status then
             self:jumpLogic()
-        elseif RunerDef.RUNER_STATUS.STATUS_DROP_DOWN == self._status then
+        elseif RunerDef.RUNER_STATUS.STATUS_DROP_DOWN == createdRuner.status then
             self:dropLogic()
-    	elseif RunerDef.RUNER_STATUS._STATUS_SQUAT == self._status then
-    		
+        elseif RunerDef.RUNER_STATUS.STATUS_NORMAL == createdRuner.status then
+            self:runLogic()
     	end
+        self.locX = self.locX + self.velocity
     end
     --跳跃
-    function _runer:jumpLogic()
-        self._loc._y = self._loc._y + self._velocity
-    	self._velocity = self._velocity + RunerDef.ACCELERATION_VALUE.ACCELERATION_G
-        if self._velocity <= 0 then
+    function createdRuner:jumpLogic()
+        self:changeStatus(RunerDef.RUNER_STATUS.STATUS_NORMAL)
+    end
+    --自由落体
+    function createdRuner:dropLogic()
+        self.locY = self.locY + self.velocityY
+        self.velocityY = self.velocityY + RunerDef.ACCELERATION_VALUE.ACCELERATION_G
+        if self.locY <= self.ground then
             self:changeStatus(RunerDef.RUNER_STATUS.STATUS_DROP_DOWN)
         end
     end
-    --自由落体
-    function _runer:dropLogic()
-        self._loc._y = self._loc._y + self._velocity
-        self._velocity = self._velocity + RunerDef.ACCELERATION_VALUE.ACCELERATION_G
-        if self._loc._y <= self._ground then
-            self:changeStatus(RunerDef.RUNER_STATUS.STATUS_NORMAL)
-        end
-    end
-    --跑动
-    function _runer:normalLogic()
-        self._loc._y = self._loc._y + self._velocity
-        self._velocity = self._velocity + RunerDef.ACCELERATION_VALUE.ACCELERATION_G
-        if self._loc._y <= self._ground then
-        	self._loc._y = self._ground
-        end
+    function createdRuner:runLogic()
+        self.locY = self.locY + self.velocityY
+        self.velocityY = self.velocityY + RunerDef.ACCELERATION_VALUE.ACCELERATION_G
+        self.locY = self.ground
+        -- body
     end
     --人物移动状态
-    function _runer:changeStatus(status)
-    	if RunerDef.RUNER_STATUS.STATUS_NORMAL == status then
-            self._velocity = 0
-            self._nextAction = RunerDef.ACTION_TYPE.RUN1
-        elseif RunerDef.RUNER_STATUS.STATUS_DROP_DOWN == status then
-
+    function createdRuner:changeStatus(status)
+    	if RunerDef.RUNER_STATUS.STATUS_DROP_DOWN == status then
+            
     	elseif RunerDef.RUNER_STATUS.STATUS_JUMP_UP == status then
-            self._velocity = RunerDef.ACCELERATION_VALUE.ACCELERATION_UP
-            self._nextAction = RunerDef.ACTION_TYPE.JUMP1
+            --self._velocity = RunerDef.ACCELERATION_VALUE.ACCELERATION_UP
+            self.nextAction = RunerDef.ACTION_TYPE.JUMP1
+        elseif RunerDef.RUNER_STATUS.STATUS_NORMAL == status then
+            self.velocityY = 0
+            self.nextAction = RunerDef.ACTION_TYPE.RUN1
     	end
-    	self._status = status
+    	self.status = status
     end
     --取得人物状态
-    function _runer:getStatus()
-        return self._status
+    function createdRuner:getStatus()
+        return self.status
     end
-	return _runer
+	return createdRuner
 end
 
 return RunerLogic
