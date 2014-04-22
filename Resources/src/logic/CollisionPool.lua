@@ -37,10 +37,13 @@ function CollisionPool:new(o)
 		end
 	end
 
-	function o:getCollision(id)
-
-		if self.allCollisionData["collision"..id] then
-			return self.allCollisionData["collision"..id]
+	function o:getCollision(level,id)
+		print(level)
+		local currentCollisions = self.allCollisionData["level"..level]
+		if currentCollisions then
+			if currentCollisions["collision"..id] then
+				return currentCollisions["collision"..id]
+			end
 		end
 		return nil
 	end

@@ -47,7 +47,7 @@ local CollisionMap = {}
 				for j=0,collisionMap.height-1 do
 					local n = j*collisionMap.width+i+1
 					if 0 ~= tileData[n] then 
-						local temp = cp:getCollision(tileData[n])
+						local temp = cp:getCollision(level,tileData[n])
 						if temp then
 							local tile = {}
 							setmetatable(tile, temp)
@@ -61,7 +61,6 @@ local CollisionMap = {}
 				end
 			end
 		end
-
 		return collisionMap
 	end
 return CollisionMap

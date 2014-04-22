@@ -208,6 +208,7 @@
 		46C1009316BF786A00F74D54 /* tolua_fix.c in Sources */ = {isa = PBXBuildFile; fileRef = 46C1008A16BF786A00F74D54 /* tolua_fix.c */; };
 		46C59AD317641FF300F43DC3 /* AudioEngine.lua in Resources */ = {isa = PBXBuildFile; fileRef = 46C59AD117641FF300F43DC3 /* AudioEngine.lua */; };
 		46C59AD417641FF300F43DC3 /* CCBReaderLoad.lua in Resources */ = {isa = PBXBuildFile; fileRef = 46C59AD217641FF300F43DC3 /* CCBReaderLoad.lua */; };
+		CD24730C1906156C00222C61 /* CCParallaxNodeExtras.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CD24730A1906156C00222C61 /* CCParallaxNodeExtras.cpp */; };
 		CD280EC118F65690009AAA96 /* app.icf in Resources */ = {isa = PBXBuildFile; fileRef = CD280EBE18F65690009AAA96 /* app.icf */; };
 		CD280EC818F68EF9009AAA96 /* res in Resources */ = {isa = PBXBuildFile; fileRef = CD280EC618F68EF9009AAA96 /* res */; };
 		CD280EC918F68EF9009AAA96 /* src in Resources */ = {isa = PBXBuildFile; fileRef = CD280EC718F68EF9009AAA96 /* src */; };
@@ -712,6 +713,8 @@
 		46C1008B16BF786A00F74D54 /* tolua_fix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tolua_fix.h; sourceTree = "<group>"; };
 		46C59AD117641FF300F43DC3 /* AudioEngine.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AudioEngine.lua; sourceTree = "<group>"; };
 		46C59AD217641FF300F43DC3 /* CCBReaderLoad.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CCBReaderLoad.lua; sourceTree = "<group>"; };
+		CD24730A1906156C00222C61 /* CCParallaxNodeExtras.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CCParallaxNodeExtras.cpp; path = ../Classes/CCParallaxNodeExtras.cpp; sourceTree = "<group>"; };
+		CD24730B1906156C00222C61 /* CCParallaxNodeExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCParallaxNodeExtras.h; path = ../Classes/CCParallaxNodeExtras.h; sourceTree = "<group>"; };
 		CD280EBE18F65690009AAA96 /* app.icf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = app.icf; sourceTree = "<group>"; };
 		CD280EC618F68EF9009AAA96 /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
 		CD280EC718F68EF9009AAA96 /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; path = src; sourceTree = "<group>"; };
@@ -2033,6 +2036,8 @@
 		F293BB7C15EB830F00256477 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CD24730A1906156C00222C61 /* CCParallaxNodeExtras.cpp */,
+				CD24730B1906156C00222C61 /* CCParallaxNodeExtras.h */,
 				CDB01E4C19011EC700FAFAF8 /* CCLuaHttpRequest.cpp */,
 				CDB01E4D19011EC700FAFAF8 /* CCLuaHttpRequest.h */,
 				F293BB7E15EB831F00256477 /* AppDelegate.cpp */,
@@ -2282,6 +2287,7 @@
 				15C155261683118600D239F2 /* b2TimeOfImpact.cpp in Sources */,
 				15C155271683118600D239F2 /* b2ChainShape.cpp in Sources */,
 				15C155281683118600D239F2 /* b2CircleShape.cpp in Sources */,
+				CD24730C1906156C00222C61 /* CCParallaxNodeExtras.cpp in Sources */,
 				15C155291683118600D239F2 /* b2EdgeShape.cpp in Sources */,
 				298B2A3618D0671400C1920F /* LoadingBarReader.cpp in Sources */,
 				15C1552A1683118600D239F2 /* b2PolygonShape.cpp in Sources */,

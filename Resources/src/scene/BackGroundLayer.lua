@@ -44,6 +44,8 @@ local function createBackgroundLayer()
         createbgObject("res/texture/scene_2_bg_002.png","res/texture/scene_2_bg_002.png",0,0)
         createbgObject("res/texture/scene_2_bg_001.png","res/texture/scene_2_bg_001.png",BaseSceneDef.SPEED_TABLE.BACKGROUND_SPEED1,0)
         createbgObject("res/texture/scene_2_bg_007.png","res/texture/scene_2_bg_007.png",BaseSceneDef.SPEED_TABLE.BACKGROUND_SPEED3,_visible_size.height/4)
+        createbgObject("res/texture/scene_2_bg_004.png","res/texture/scene_2_bg_004.png",BaseSceneDef.SPEED_TABLE.BACKGROUND_SPEED4,_visible_size.height/20)
+        
         createbgObject("res/texture/scene_2_bg_005.png","res/texture/scene_2_bg_005.png",BaseSceneDef.SPEED_TABLE.BACKGROUND_SPEED4,_visible_size.height/30)
         createbgObject("res/texture/scene_2_bg_006.png","res/texture/scene_2_bg_006.png",BaseSceneDef.SPEED_TABLE.BACKGROUND_SPEED5,0)
     end

@@ -59,8 +59,9 @@ local function createGameSceneLayer(level)
     --场景内容更新
     function layer:update(dt)
     	self:updateCollisions(dt)
-        self:updateRuner(dt)
         self:checkCollision(dt)
+        self.runerData:update(dt)
+        self._runer:update(self.runerData)
         self:runAction(CCFollow:create(self._runer));
         if GameSceneLayer.isOver then
             --_scheduler:unScheduleScriptFunc(GameScene._game_layer.update, 0, false)
@@ -94,14 +95,9 @@ local function createGameSceneLayer(level)
             end
         end
     end
-    --更新玩家
-    function layer:updateRuner(dt)
-        self.runerData:update()
-        self._runer:update(self.runerData)
-    end
     --碰撞检测
     function layer:checkCollision(dt)
-        self.runerData.ground = 0
+        self.runerData.ground = -_visible_size.height
         local runerSprite = self._runer
         local collisions = self._collision_map.tiles
         local runerRect = runerSprite:boundingBox()
@@ -136,16 +132,20 @@ local function createGameSceneLayer(level)
             if CollisionDef.COLLISION_TYPE[v.type] == CollisionDef.COLLISION_TYPE.COLLISION_GROUND and 
                 isCollision == RunerDef.RUNER_COLLISION_AREA.AREA_FOOT and 
                 (RunerDef.RUNER_STATUS.STATUS_DROP_DOWN == self.runerData:getStatus() or
-                    RunerDef.RUNER_STATUS.STATUS_NORMAL == self.runerData:getStatus()) then
-                self.runerData.ground = runerRect:getMinY()
+                    RunerDef.RUNER_STATUS.STATUS_RUN == self.runerData:getStatus()) then
+                self.runerData.ground = ground:getMinY()
+                if layer.runerData:getStatus() ~= RunerDef.RUNER_STATUS.STATUS_RUN then
+                    layer.runerData:changeStatus(RunerDef.RUNER_STATUS.STATUS_RUN)
+                end
                 return
             end
-            -- --可穿透可使用
-            -- if CollisionDef.COLLISION_TYPE[v.type] == CollisionDef.COLLISION_TYPE.COLLISION_GOLD and 
-            --     isCollision ~= RunerDef.RUNER_COLLISION_AREA.AREA_NONE then
-            --     v.status = CollisionDef.COLLISION_STATUS.COLLISION_DEAD
-            --     return
-            -- end
+
+            --可穿透可使用
+            if CollisionDef.COLLISION_TYPE[v.type] == CollisionDef.COLLISION_TYPE.COLLISION_GOLD and 
+                isCollision ~= RunerDef.RUNER_COLLISION_AREA.AREA_NONE then
+                v.status = CollisionDef.COLLISION_STATUS.COLLISION_DEAD
+                return
+            end
             -- --陷阱
             -- if CollisionDef.COLLISION_TYPE[v.type] == CollisionDef.COLLISION_TYPE.COLLISION_SNARE and 
             --     isCollision ~= RunerDef.RUNER_COLLISION_AREA.AREA_NONE then
@@ -155,13 +155,13 @@ local function createGameSceneLayer(level)
             --     --print("中陷阱")
             --     return
             -- end
+            
             -- --不可穿透
             -- if CollisionDef.COLLISION_TYPE[v.type] == CollisionDef.COLLISION_TYPE.COLLISION_NOWAY and
             --     isCollision == RunerDef.RUNER_COLLISION_AREA.AREA_RIGHT then
             --     self.runerData.locX = collisionRect:getMinX() - runerSize.width
             --     return
             -- end
-            
         end
     end
     
@@ -197,10 +197,11 @@ local function createGameSceneLayer(level)
         if "RESET" == obj then
             layer:reset()
         elseif "JUMP" == obj then
-            layer.runerData:changeStatus(RunerDef.RUNER_STATUS.STATUS_JUMP_UP)
+            if layer.runerData:getStatus() ~= RunerDef.RUNER_STATUS.STATUS_JUMP_UP then
+                layer.runerData:changeStatus(RunerDef.RUNER_STATUS.STATUS_JUMP_UP)
+            end
         elseif "ATTACK" == obj then
-            --layer.runerData:changeStatus(RunerDef.RUNER_STATUS.STATUS_JUMP_UP)
-            layer.runerData._nextAction = RunerDef.ACTION_TYPE.ATTACK 
+            layer.runerData.nextAction = RunerDef.ACTION_TYPE.ATTACK 
         end
     end
 

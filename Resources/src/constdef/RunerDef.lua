@@ -5,7 +5,7 @@ local M = {}
 M.RUNER_STATUS = 
 {  
     
-    STATUS_NORMAL = 0, 
+    STATUS_RUN = 0, 
     STATUS_JUMP_UP = 1,
     STATUS_CROUCH = 2,
     STATUS_DROP_DOWN = 3
